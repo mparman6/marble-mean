@@ -1,0 +1,186 @@
+[
+  {
+    "id": "1",
+    "visualizer_section_name": "Countertop Island",
+    "visualizer_section_alias": "countertop",
+    "kitchen_id": "1",
+    "folder": "",
+    "added_at": "2015-02-27 19:09:27"
+  },
+  {
+    "id": "2",
+    "visualizer_section_name": "Countertop Far",
+    "visualizer_section_alias": "countertop_far",
+    "kitchen_id": "1",
+    "folder": "",
+    "added_at": "2015-02-27 19:09:27"
+  },
+  {
+    "id": "3",
+    "visualizer_section_name": "Backsplash Full",
+    "visualizer_section_alias": "backsplash_full",
+    "kitchen_id": "1",
+    "folder": "",
+    "added_at": "2015-02-27 19:09:27"
+  },
+  {
+    "id": "4",
+    "visualizer_section_name": "Wall",
+    "visualizer_section_alias": "wall",
+    "kitchen_id": "1",
+    "folder": "SECTIONS-WALL",
+    "added_at": "2015-02-27 19:09:27"
+  },
+  {
+    "id": "5",
+    "visualizer_section_name": "Cabinets",
+    "visualizer_section_alias": "cabinets",
+    "kitchen_id": "1",
+    "folder": "SECTIONS-CABINETS",
+    "added_at": "2015-02-27 19:09:27"
+  },
+  {
+    "id": "6",
+    "visualizer_section_name": "Floor",
+    "visualizer_section_alias": "floor",
+    "kitchen_id": "1",
+    "folder": "SECTIONS-FLOOR",
+    "added_at": "2015-02-27 19:09:27"
+  },
+  {
+    "id": "7",
+    "visualizer_section_name": "Edge Island",
+    "visualizer_section_alias": "edge_Straight",
+    "kitchen_id": "1",
+    "folder": "",
+    "added_at": "2015-02-27 19:09:27"
+  },
+  {
+    "id": "8",
+    "visualizer_section_name": "Edge Far",
+    "visualizer_section_alias": "edge_far_Straight",
+    "kitchen_id": "1",
+    "folder": "",
+    "added_at": "2015-02-27 19:09:27"
+  },
+  {
+    "id": "9",
+    "visualizer_section_name": "Backsplash Low",
+    "visualizer_section_alias": "backsplash_low",
+    "kitchen_id": "1",
+    "folder": "",
+    "added_at": "2015-07-03 13:19:30"
+  },
+  {
+    "id": "10",
+    "visualizer_section_name": "Backsplash full",
+    "visualizer_section_alias": "backsplash_full_soho",
+    "kitchen_id": "2",
+    "folder": "",
+    "added_at": "2015-09-11 15:05:45"
+  },
+  {
+    "id": "11",
+    "visualizer_section_name": "Backsplash low",
+    "visualizer_section_alias": "backsplash_low_soho",
+    "kitchen_id": "2",
+    "folder": "",
+    "added_at": "2015-09-11 15:05:45"
+  },
+  {
+    "id": "12",
+    "visualizer_section_name": "Backsplash tile",
+    "visualizer_section_alias": "backsplash_tile_soho",
+    "kitchen_id": "2",
+    "folder": "SOHO\/SECTIONS-BACKSPLASH",
+    "added_at": "2015-09-11 15:05:45"
+  },
+  {
+    "id": "13",
+    "visualizer_section_name": "Cabinets top",
+    "visualizer_section_alias": "cabinets_top_soho",
+    "kitchen_id": "2",
+    "folder": "SOHO\/SECTIONS-CABINETS-TOP",
+    "added_at": "2015-09-11 15:05:45"
+  },
+  {
+    "id": "14",
+    "visualizer_section_name": "Cabinets bottom",
+    "visualizer_section_alias": "cabinets_bottom_soho",
+    "kitchen_id": "2",
+    "folder": "SOHO\/SECTIONS-CABINETS-BOTTOM",
+    "added_at": "2015-09-11 15:05:45"
+  },
+  {
+    "id": "15",
+    "visualizer_section_name": "Chairs",
+    "visualizer_section_alias": "chairs_soho",
+    "kitchen_id": "2",
+    "folder": "SOHO\/SECTIONS-CHAIRS",
+    "added_at": "2015-09-11 15:05:45"
+  },
+  {
+    "id": "16",
+    "visualizer_section_name": "Floor",
+    "visualizer_section_alias": "floor_soho",
+    "kitchen_id": "2",
+    "folder": "SOHO\/SECTIONS-FLOOR",
+    "added_at": "2015-09-11 15:05:45"
+  },
+  {
+    "id": "17",
+    "visualizer_section_name": "Island",
+    "visualizer_section_alias": "island_top_soho",
+    "kitchen_id": "2",
+    "folder": "",
+    "added_at": "2015-09-11 15:05:45"
+  },
+  {
+    "id": "18",
+    "visualizer_section_name": "Perimeter Countertop",
+    "visualizer_section_alias": "tops_soho",
+    "kitchen_id": "2",
+    "folder": "",
+    "added_at": "2015-09-11 15:05:45"
+  },
+  {
+    "id": "19",
+    "visualizer_section_name": "Wall",
+    "visualizer_section_alias": "wall_soho",
+    "kitchen_id": "2",
+    "folder": "SOHO\/SECTIONS-WALL",
+    "added_at": "2015-09-11 15:05:45"
+  },
+  {
+    "id": "20",
+    "visualizer_section_name": "Cabinets Mini",
+    "visualizer_section_alias": "cabinets_soho_mini",
+    "kitchen_id": "2",
+    "folder": "SOHO\/SECTIONS-CABINETS\/MINI",
+    "added_at": "2015-10-13 10:19:55"
+  },
+  {
+    "id": "21",
+    "visualizer_section_name": "WALL MINI",
+    "visualizer_section_alias": "wall_soho_mini",
+    "kitchen_id": "2",
+    "folder": "SOHO\/SECTIONS-WALL\/THUMBS",
+    "added_at": "2015-10-26 16:28:43"
+  },
+  {
+    "id": "22",
+    "visualizer_section_name": "Floor Mini",
+    "visualizer_section_alias": "floor_soho_mini",
+    "kitchen_id": "2",
+    "folder": "SOHO\/SECTIONS-FLOOR\/THUMBS",
+    "added_at": "2015-10-27 11:35:21"
+  },
+  {
+    "id": "23",
+    "visualizer_section_name": "Chairs Mini",
+    "visualizer_section_alias": "chairs_soho_mini",
+    "kitchen_id": "2",
+    "folder": "SOHO\/SECTIONS-FLOOR\/THUMBS",
+    "added_at": "2015-10-27 16:39:27"
+  }
+]
