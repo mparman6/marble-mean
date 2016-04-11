@@ -6,7 +6,8 @@ var app = express();
 var mongoose = require('mongoose');
 
 require('./app/models/modelMaterials')
-mongoose.connect('mongodb://localhost/test');
+var database = require('./config/database');
+mongoose.connect(database.url);
 var db = mongoose.connection;
 
 app.use(bodyParser.urlencoded({extended: true}))
@@ -18,7 +19,7 @@ app.get('/', (req, res) => {
 });
 
 
-app.get('/granite', (req, res) => {
+app.get('/models/modelMaterials', (req, res) => {
 	db.collection('materials').find({"material_category_id": "35"}).toArray(function(err, results) {
 		console.log(results);
 	});

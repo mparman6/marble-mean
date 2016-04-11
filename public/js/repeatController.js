@@ -1,3 +1,12 @@
+var app = angular.module("marbleApp");
+
+app.controller('MainCtrl', function($scope, $http) {
+	$scope.materials = [];
+	$http.get('materials', function(results) {
+	console.log(results);
+	$scope.materials = results;
+});
+
 var Material = require('model-materials');
 
 module.exports = function(app) {

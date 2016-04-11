@@ -3,7 +3,7 @@ var app = angular.module("marbleApp", []);
 
 app.controller('SearchCtrl', function($scope, $http) {
 	$scope.categories = [
-		{id: '1', name: 'Granite', route: '/granite', material_id: '35'},
+		{id: '1', name: 'Granite', route: '/models/modelMaterials', material_id: '35'},
 		{id: '2', name: 'Marble', route: '/marble', material_id: '36'},
 		{id: '4', name: 'Quartz', route: '/quartzite', material_id: '38'},
 		{id: '5', name: 'Onyx', route: '/onyx', material_id: '39'},
@@ -34,7 +34,3 @@ app.controller('SearchCtrl', function($scope, $http) {
 	
 });
 
-app.controller('MainCtrl', function($scope, $http) {
-	$http.get('/modelMaterials', config).then(successCallback(reponse), errorCallback);
-	console.log(response);
-});

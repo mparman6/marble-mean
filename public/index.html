@@ -9,6 +9,7 @@
       <link rel="stylesheet" href="../public/css/style.css"/>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.3/angular.js"></script>
       <script src="../public/js/searchController.js"></script>
+      <script src="../public/js/repeatController.js"></script>
       <script src="../app/models/modelMaterials.js"></script>
       <script src="/server.js"></script>  
       <script src="../public/js/index.js"></script>  
@@ -47,15 +48,15 @@
 
 
 <!-- Material results from category search; ngRepeat -->
-    <div class="container" ng-controller="MainCtrl">
+    <div class="container" ng-controller='MainCtrl'>
      <div class="row">   
-        <div class="col m3" ng-repeat="material in materials">
+        <div class="col m3" ng-repeat="result in materials">
           <a href="/cosmicblack"><div class="card">
             <div class="card-image small">
                 <img src="">
             </div>
             <div class="card-content">
-              <h5>{{ material.material_name }}</h5>
+              <h5>{{ result.material_name }}</h5>
             </div>
             </div>
           </a>
