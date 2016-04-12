@@ -5,7 +5,9 @@ var bodyParser = require('body-parser');
 var app = express();
 var mongoose = require('mongoose');
 
-require('./app/models/modelMaterials')
+require('./routes')(app);
+
+var material = require('./app/models/modelMaterials')
 mongoose.connect('mongodb://localhost/test');
 var db = mongoose.connection;
 
@@ -17,12 +19,15 @@ app.get('/', (req, res) => {
 	res.sendFile(process.cwd() + "/public/index.html");
 });
 
+// routes
 
 app.get('/granite', (req, res) => {
 	db.collection('materials').find({"material_category_id": "35"}).toArray(function(err, results) {
+		res.json(results);
 		console.log(results);
 	});
 	res.redirect('/');
+	return;
 });
 
 app.get('/marble', (req, res) => {

@@ -30,9 +30,7 @@ var materialSchema = new Schema({
 });
 
 
-mongoose.model('Material', materialSchema);
+var Material = mongoose.model('Material', materialSchema);
 
-module.exports.getMaterialsbyCategory = function(category, callback) {
-    var query = {category: category};
-    Material.find(query, callback);
-}
+module.exports = Material;
+
