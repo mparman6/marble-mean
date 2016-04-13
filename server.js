@@ -1,11 +1,9 @@
-console.log('May Node be with you');
-
 var express = require('express');
 var bodyParser = require('body-parser');
 var app = express();
 var mongoose = require('mongoose');
 
-require('./routes')(app);
+
 
 var material = require('./app/models/modelMaterials')
 mongoose.connect('mongodb://localhost/test');
@@ -24,32 +22,26 @@ app.get('/', (req, res) => {
 app.get('/granite', (req, res) => {
 	db.collection('materials').find({"material_category_id": "35"}).toArray(function(err, results) {
 		res.json(results);
-		console.log(results);
 	});
-	res.redirect('/');
-	return;
 });
 
 app.get('/marble', (req, res) => {
 	db.collection('materials').find({"material_category_id": "36"}).toArray(function(err, results) {
-		console.log(results);
+		res.json(results);
 	});
-	res.redirect('/');
 });
 
 app.get('/quartz', (req, res) => {
 	db.collection('materials').find({"material_category_id": "38"}).toArray(function(err, results) {
-		console.log(results);
+		res.json(results);
 	});
-	res.redirect('/');
 });
 
 
 app.get('/quartzite', (req, res) => {
 	db.collection('materials').find({"material_category_id": "43"}).toArray(function(err, results) {
-		console.log(results);
+		res.json(results);
 	});
-	res.redirect('/');
 });
 
 app.get('/onyx', (req, res) => {

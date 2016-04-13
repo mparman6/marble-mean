@@ -4,18 +4,10 @@
       <title>Marble.com AngularMongo</title>
       <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
       <!--Import materialize.css-->
-      <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/css/materialize.min.css"  media="screen,projection"/>
+      <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
       <link rel="stylesheet" href="../public/css/style.css"/>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.3/angular.js"></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.18/angular-ui-router.js"></script>
-      <script src="./controllers/searchController.js"></script>
-      <script src="./controllers/materials.js"></script>
-      <script src="./app/models/modelMaterials.js"></script>
-      <script src="./factories/mongoFactory.js"></script>
-      <script src="/server.js"></script>  
-      <script src="/routes.js"></script>  
-      <script src="./public/js/index.js"></script>  
+
        
       
     </head>
@@ -53,13 +45,13 @@
 <!-- Material results from category search; ngRepeat -->
     <div class="container" ng-controller="MaterialCtrl">
      <div class="row">   
-        <div class="col m3" ng-repeat="material in MongoStuff">
+        <div class="col m3" ng-repeat="material in mongoStuff">
           <a href="/cosmicblack"><div class="card">
             <div class="card-image small">
-                <img src="">
+                <img src="http://marble.com/uploads/materials/695/300X300/thumbnail/Lapidus-Gold_amTEVdar5mZ31nH7I30g.jpg">
             </div>
             <div class="card-content">
-              <h5>{{ material.material_name }}</h5>
+              <p>{{ material.material_name }}</p>
             </div>
             </div>
           </a>
@@ -69,13 +61,16 @@
 
 
     
-
-
-
-
-      <!--Import jQuery before materialize.js-->
           
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/js/materialize.min.js"></script>
+  
+    <script src="https://code.jquery.com/jquery-2.2.3.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/js/materialize.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.3/angular.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.18/angular-ui-router.js"></script>
+    <script src="/public/js/app.js"></script>
+    <script src="./app/models/modelMaterials.js"></script>
+    <script src="/server.js"></script>  
+    <!-- <script src="/routes.js"></script> -->  
       
     
     </body>
