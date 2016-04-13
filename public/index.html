@@ -43,16 +43,15 @@
 
 
 <!-- Material results from category search; ngRepeat -->
-    <div class="container" ng-controller="MaterialCtrl">
-     <div class="row">   
-        <div class="col m3" ng-repeat="material in mongoStuff">
-          <a href="/cosmicblack"><div class="card">
-            <div class="card-image small">
-                <img src="http://marble.com/uploads/materials/695/300X300/thumbnail/Lapidus-Gold_amTEVdar5mZ31nH7I30g.jpg">
-            </div>
-            <div class="card-content">
-              <p>{{ material.material_name }}</p>
-            </div>
+    <div class="container" ng-controller="MainCtrl">
+     <div class="row" ng-repeat="category in mongoStuff">   
+        <div class="col m9">
+          <a href="/{{ category.category_name }}">
+            <div class="card">
+              <div class="card-content">
+                <h5>{{ category.category_name }}</h5>
+                <p>{{ category.category_description }}</p>
+              </div>
             </div>
           </a>
         </div>        
@@ -70,7 +69,8 @@
     <script src="/public/js/app.js"></script>
     <script src="./app/models/modelMaterials.js"></script>
     <script src="/server.js"></script>  
-    <!-- <script src="/routes.js"></script> -->  
+      
+      
       
     
     </body>

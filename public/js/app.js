@@ -1,21 +1,28 @@
-var app = angular.module("marbleApp", []);
-// .config(function($stateProvider, $urlRouteProvider, $locationProvider) {
+var marbleApp = angular.module("marbleApp", ['ui.router']);
 
-// 	$urlRouteProvider.otherwise('/');
+marbleApp.config(function($stateProvider, $urlRouterProvider, $locationProvider) {
 
-// 	$stateProvider
-// 	.state('home', {
-// 		url: '/',
-// 		templateUrl: '/public/index.html'
-// 	});
-// 	$locationProvider.html5Mode(true);
-// });
+  $urlRouterProvider.otherwise('/');
 
-app.factory('mongoFactory', function($q, $http) {
+  $stateProvider
+  .state('materials', {
+    url: '/',
+    templateUrl: '/public/index.html'
+  });
+  $stateProvider
+  .state('granite', {
+    url: '/granite',
+    templateUrl: '/public/partials-granite.html'
+  });
+  $locationProvider.html5Mode(true);
+});
+
+
+marbleApp.factory('mongoFactory', function($q, $http) {
 	return {
 		getMongoStuff: function() {
 			var deferred = $q.defer(),
-			httpPromise = $http.get('/granite');
+			httpPromise = $http.get('/materials');
 
 		httpPromise.success(function(materials) {
 			deferred.resolve(materials);
@@ -29,7 +36,18 @@ app.factory('mongoFactory', function($q, $http) {
 });
 
 
-app.controller('MaterialCtrl', function($scope, mongoFactory) {
+marbleApp.controller('MaterialCtrl', function($scope, mongoFactory) {
+	$scope.mongoStuff = {};
+	mongoFactory.getMongoStuff()
+	.then(function(materials) {
+		$scope.mongoStuff = materials;
+		console.log(materials);
+	}, function(error) {
+		console.log(error);
+	});
+});
+
+marbleApp.controller('MainCtrl', function($scope, mongoFactory) {
 	$scope.mongoStuff = {};
 	mongoFactory.getMongoStuff()
 	.then(function(materials) {
@@ -41,7 +59,7 @@ app.controller('MaterialCtrl', function($scope, mongoFactory) {
 });
 
 
-app.controller('SearchCtrl', function($scope) {
+marbleApp.controller('SearchCtrl', function($scope) {
 	$scope.categories = [
 		{id: '1', name: 'Granite', route: '/granite', material_id: '35'},
 		{id: '2', name: 'Marble', route: '/marble', material_id: '36'},

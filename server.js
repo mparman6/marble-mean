@@ -19,6 +19,12 @@ app.get('/', (req, res) => {
 
 // routes
 
+app.get('/materials', (req, res) => {
+	db.collection('categories').find({}).toArray(function(err, results) {
+		res.json(results);
+	});
+});
+
 app.get('/granite', (req, res) => {
 	db.collection('materials').find({"material_category_id": "35"}).toArray(function(err, results) {
 		res.json(results);
