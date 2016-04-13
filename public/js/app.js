@@ -5,15 +5,30 @@ marbleApp.config(function($stateProvider, $urlRouterProvider, $locationProvider)
   $urlRouterProvider.otherwise('/');
 
   $stateProvider
+  .state('home', {
+    url: '/home',
+    templateUrl: 'public/index.html',
+    controller: 'MainCtrl'
+  })
   .state('materials', {
-    url: '/',
-    templateUrl: '/public/index.html'
+    url: '/materials',
+    templateUrl: 'public/home.html',
+    controller: 'MainCtrl'
   })
   .state('granite', {
     url: '/granite',
-    templateUrl: '/public/partials-granite.html'
+    templateUrl: '/public/partials-granite.html',
+    controller: 'MaterialCtrl'
+  })
+  .state('marble', {
+    url: '/marble',
+    templateUrl: '/public/partials-marble.html',
+    controller: 'MarbleCtrl'
   });
-  $locationProvider.html5Mode(true);
+  $locationProvider.html5Mode({
+  enabled: true,
+  requireBase: false
+});
 });
 
 
@@ -51,6 +66,22 @@ marbleApp.factory('graniteFactory', function($q, $http) {
 	};
 });
 
+marbleApp.factory('marbleFactory', function($q, $http) {
+	return {
+		getMarbleStuff: function() {
+			var deferred = $q.defer(),
+			httpPromise = $http.get('/marble');
+
+		httpPromise.success(function(marble) {
+			deferred.resolve(marble);
+		})
+		.error(function(error) {
+			console.log('Error...');
+		});
+		return deferred.promise;
+		}
+	};
+});
 
 marbleApp.controller('MaterialCtrl', function($scope, graniteFactory) {
 	$scope.graniteStuff = {};
@@ -58,6 +89,17 @@ marbleApp.controller('MaterialCtrl', function($scope, graniteFactory) {
 	.then(function(granite) {
 		$scope.graniteStuff = granite;
 		console.log(granite);
+	}, function(error) {
+		console.log(error);
+	});
+});
+
+marbleApp.controller('MarbleCtrl', function($scope, marbleFactory) {
+	$scope.marbleStuff = {};
+	marbleFactory.getMarbleStuff()
+	.then(function(marble) {
+		$scope.marbleStuff = marble;
+		console.log(marble);
 	}, function(error) {
 		console.log(error);
 	});
