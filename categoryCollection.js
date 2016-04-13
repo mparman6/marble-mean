@@ -28,7 +28,8 @@ var categorySchema = Schema({
         second: String,
         third: String,
         fourth: String
-    }
+    },
+    category_url: String
 });
 
 var Categories = mongoose.model('Categories', categorySchema);
@@ -45,7 +46,8 @@ var allCategories = [
             second: "Highly resistant to staining, scratching and heat",
             third: "Largest selection of colors",
             fourth: "ideal for kitchen countertops"
-        }
+        },
+        category_url: "/granite"
     },
 
     {
@@ -57,7 +59,8 @@ var allCategories = [
             first: "Classic and elegant stone with a timeless style",
             second: "Great for bathroom, fireplaces, and furniture tops",
             third: "Aesthetically pleasing, whether polished or honed"
-        }
+        },
+        category_url: "/marble"
     },
 
     {
@@ -69,7 +72,8 @@ var allCategories = [
             first: "Resembles marble",
             second: "Uniqe and versatile look",
             third: "Hard, heat-resistant, and has low porosity"
-        }
+        },
+        category_url: "/quartzite"
     },
 
     {
@@ -81,7 +85,8 @@ var allCategories = [
             first: "non-porous",
             second: "Resistant to stains, acid, scratches, and heat",
             third: "Contemporary look"
-        }
+        },
+        category_url: "/quartz"
     },
 
     {
@@ -93,7 +98,8 @@ var allCategories = [
             first: "Stunning colors and patterns",
             second: "Translucent types can be backlit",
             third: "Contemporary"
-        }
+        },
+        category_url: "/onyx"
     },
 
     {
@@ -104,7 +110,8 @@ var allCategories = [
         category_highlights: {
             first: "Luxurious look - Eco-friendly",
             second: "used for facades, stairs and decorative pieces"
-        }
+        },
+        category_url: "/travertine"
     },
 
     {
@@ -116,7 +123,8 @@ var allCategories = [
             first: "Made from semi-precious stones",
             second: "Extremely Unique",
             third: "Some types are semi-translucent properties"
-        }
+        },
+        category_url: "/gemstone"
     },
 
     {
@@ -128,7 +136,8 @@ var allCategories = [
             first: "Natural, ancient appearance",
             second: "Good for low traffic areas",
             third: "Can contain fossils"
-        }
+        },
+        category_url: "/limestone"
     },
 
     {
@@ -140,7 +149,8 @@ var allCategories = [
             first: "Heat resistant",
             second: "Vintage look",
             third: "Changes with time (ages)"
-        }
+        },
+        category_url: "/soapstone"
     },
 
     {
@@ -152,7 +162,8 @@ var allCategories = [
             first: "Organic appearance",
             second: "Available for most projects",
             third: "Chemically inert"
-        }
+        },
+        category_url: "/slate"
     },
 
     {
@@ -164,7 +175,8 @@ var allCategories = [
             first: "Non-porous",
             second: "Endless color options",
             third: "Stain-resistant"
-        }
+        },
+        category_url: "/glass"
     },
 
 ];
