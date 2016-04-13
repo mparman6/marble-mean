@@ -45,7 +45,7 @@
 <!-- Material results from category search; ngRepeat -->
     <div class="container" ng-controller="MainCtrl">
      <div class="row" ng-repeat="category in mongoStuff">   
-        <div class="col m9">
+        <div class="col m7">
           <a href="/{{ category.category_name }}">
             <div class="card">
               <div class="card-content">
@@ -58,6 +58,8 @@
       </div>
     </div>
 
+
+    <div ui-view></div>
 
     
           

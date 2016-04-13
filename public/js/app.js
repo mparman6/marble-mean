@@ -8,8 +8,7 @@ marbleApp.config(function($stateProvider, $urlRouterProvider, $locationProvider)
   .state('materials', {
     url: '/',
     templateUrl: '/public/index.html'
-  });
-  $stateProvider
+  })
   .state('granite', {
     url: '/granite',
     templateUrl: '/public/partials-granite.html'
@@ -35,13 +34,30 @@ marbleApp.factory('mongoFactory', function($q, $http) {
 	};
 });
 
+marbleApp.factory('graniteFactory', function($q, $http) {
+	return {
+		getGraniteStuff: function() {
+			var deferred = $q.defer(),
+			httpPromise = $http.get('/granite');
 
-marbleApp.controller('MaterialCtrl', function($scope, mongoFactory) {
-	$scope.mongoStuff = {};
-	mongoFactory.getMongoStuff()
-	.then(function(materials) {
-		$scope.mongoStuff = materials;
-		console.log(materials);
+		httpPromise.success(function(granite) {
+			deferred.resolve(granite);
+		})
+		.error(function(error) {
+			console.log('Error...');
+		});
+		return deferred.promise;
+		}
+	};
+});
+
+
+marbleApp.controller('MaterialCtrl', function($scope, graniteFactory) {
+	$scope.graniteStuff = {};
+	graniteFactory.getGraniteStuff()
+	.then(function(granite) {
+		$scope.graniteStuff = granite;
+		console.log(granite);
 	}, function(error) {
 		console.log(error);
 	});
