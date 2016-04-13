@@ -12,14 +12,25 @@
       
     </head>
 
-    <body ng-controller='SearchCtrl'>
+    <body>
       
 <!-- Category navbar; ngRepeat -->
-      <div class="navbar">
+      <div class="navbar-fixed">
         <nav>
           <div class="nav-wrapper" id="gray">
-            <ul class="hide-on-med-and-down" id="category-center">
-              <li ng-repeat="category in categories"><a href="{{category.route}}">{{category.name}}</a></li>
+            <ul class="hide-on-med-and-down">
+              <li><a href="/home">Home</a></li>
+              <li><a href="/granite">Granite</a></li>
+              <li><a href="/marble">Marble</a></li>
+              <li><a href="/quartzite">Quartzite</a></li>
+              <li><a href="/quartz">Quartz</a></li>
+              <li><a href="/onyx">Onyx</a></li>
+              <li><a href="/travertine">Travertine</a></li>
+              <li><a href="/gemstone">Gemstone</a></li>
+              <li><a href="/soapstone">Soapstone</a></li>
+              <li><a href="/limestone">Limestone</a></li>
+              <li><a href="/slate">Slate</a></li>
+              <li><a href="/glass">Glass</a></li>
             </ul>
           </div>
         </nav>
@@ -38,26 +49,6 @@
         </div>
       </nav>
       <br>
-
-      
-
-
-<!-- Material results from category search; ngRepeat -->
-    <div class="container" ng-controller="MainCtrl">
-     <div class="row" ng-repeat="category in mongoStuff">   
-        <div class="col m7">
-          <a href="/{{ category.category_name }}">
-            <div class="card">
-              <div class="card-content">
-                <h5>{{ category.category_name }}</h5>
-                <p>{{ category.category_description }}</p>
-              </div>
-            </div>
-          </a>
-        </div>        
-      </div>
-    </div>
-
 
     <div ui-view></div>
 

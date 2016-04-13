@@ -2,18 +2,74 @@ var marbleApp = angular.module("marbleApp", ['ui.router']);
 
 marbleApp.config(function($stateProvider, $urlRouterProvider, $locationProvider) {
 
-  $urlRouterProvider.otherwise('/');
+  $urlRouterProvider.otherwise('/home');
 
   $stateProvider
-  .state('materials', {
-    url: '/',
-    templateUrl: '/public/index.html'
+  .state('categories', {
+    url: '/home',
+    templateUrl: 'public/home.html',
+    controller: 'MainCtrl'
   })
   .state('granite', {
     url: '/granite',
-    templateUrl: '/public/partials-granite.html'
+    templateUrl: '/public/partials-granite.html',
+    controller: 'GraniteCtrl'
+  })
+  .state('marble', {
+    url: '/marble',
+    templateUrl: '/public/partials-marble.html',
+    controller: 'MarbleCtrl'
+  })
+  .state('quartzite', {
+    url: '/quartzite',
+    templateUrl: '/public/partials-quartzite.html',
+    controller: 'QuartziteCtrl'
+  })
+  .state('quartz', {
+    url: '/quartz',
+    templateUrl: '/public/partials-quartz.html',
+    controller: 'QuartzCtrl'
+  })
+  .state('onyx', {
+    url: '/onyx',
+    templateUrl: '/public/partials-onyx.html',
+    controller: 'OnyxCtrl'
+  })
+  .state('travertine', {
+    url: '/travertine',
+    templateUrl: '/public/partials-travertine.html',
+    controller: 'TravertineCtrl'
+  })
+  .state('gemstone', {
+    url: '/gemstone',
+    templateUrl: '/public/partials-gemstone.html',
+    controller: 'GemstoneCtrl'
+  })
+  .state('soapstone', {
+    url: '/soapstone',
+    templateUrl: '/public/partials-soapstone.html',
+    controller: 'SoapstoneCtrl'
+  })
+  .state('limestone', {
+    url: '/limestone',
+    templateUrl: '/public/partials-limestone.html',
+    controller: 'LimestoneCtrl'
+  })
+  .state('slate', {
+    url: '/slate',
+    templateUrl: '/public/partials-slate.html',
+    controller: 'SlateCtrl'
+  })
+  .state('glass', {
+    url: '/glass',
+    templateUrl: '/public/partials-glass.html',
+    controller: 'GlassCtrl'
   });
-  $locationProvider.html5Mode(true);
+
+	  $locationProvider.html5Mode({
+	  enabled: true,
+	  requireBase: false
+	});
 });
 
 
@@ -34,6 +90,17 @@ marbleApp.factory('mongoFactory', function($q, $http) {
 	};
 });
 
+marbleApp.controller('MainCtrl', function($scope, mongoFactory) {
+	$scope.mongoStuff = {};
+	mongoFactory.getMongoStuff()
+	.then(function(materials) {
+		$scope.mongoStuff = materials;
+		console.log(materials);
+	}, function(error) {
+		console.log(error);
+	});
+});
+
 marbleApp.factory('graniteFactory', function($q, $http) {
 	return {
 		getGraniteStuff: function() {
@@ -51,8 +118,7 @@ marbleApp.factory('graniteFactory', function($q, $http) {
 	};
 });
 
-
-marbleApp.controller('MaterialCtrl', function($scope, graniteFactory) {
+marbleApp.controller('GraniteCtrl', function($scope, graniteFactory) {
 	$scope.graniteStuff = {};
 	graniteFactory.getGraniteStuff()
 	.then(function(granite) {
@@ -61,33 +127,302 @@ marbleApp.controller('MaterialCtrl', function($scope, graniteFactory) {
 	}, function(error) {
 		console.log(error);
 	});
+	$scope.randomImage = function() {
+		path = path || 'images/';
+		var num = Math.floor(Math.random() * imgAr.length);
+		var img = imgAr[num];
+		var imgStr = '<img src="' + path + img + '" alt = "">';
+		document.write(imgStr);
+	}
 });
 
-marbleApp.controller('MainCtrl', function($scope, mongoFactory) {
-	$scope.mongoStuff = {};
-	mongoFactory.getMongoStuff()
-	.then(function(materials) {
-		$scope.mongoStuff = materials;
-		console.log(materials);
+
+marbleApp.factory('marbleFactory', function($q, $http) {
+	return {
+		getMarbleStuff: function() {
+			var deferred = $q.defer(),
+			httpPromise = $http.get('/marble');
+
+		httpPromise.success(function(marble) {
+			deferred.resolve(marble);
+		})
+		.error(function(error) {
+			console.log('Error...');
+		});
+		return deferred.promise;
+		}
+	};
+});
+
+
+marbleApp.controller('MarbleCtrl', function($scope, marbleFactory) {
+	$scope.marbleStuff = {};
+	marbleFactory.getMarbleStuff()
+	.then(function(marble) {
+		$scope.marbleStuff = marble;
+		console.log(marble);
 	}, function(error) {
 		console.log(error);
 	});
 });
 
+marbleApp.factory('quartziteFactory', function($q, $http) {
+	return {
+		getQuartziteStuff: function() {
+			var deferred = $q.defer(),
+			httpPromise = $http.get('/quartzite');
 
-marbleApp.controller('SearchCtrl', function($scope) {
-	$scope.categories = [
-		{id: '1', name: 'Granite', route: '/granite', material_id: '35'},
-		{id: '2', name: 'Marble', route: '/marble', material_id: '36'},
-		{id: '4', name: 'Quartz', route: '/quartz', material_id: '38'},
-		{id: '5', name: 'Onyx', route: '/onyx', material_id: '39'},
-		{id: '6', name: 'Travertine', route: '/travertine', material_id: '40'},
-		{id: '7', name: 'Gemstone', route: '/gemstone', material_id: '41'},
-		{id: '8', name: 'Limestone', route: '/limestone', material_id: '42'},
-		{id: '9', name: 'Soapstone', route: '/soapstone', material_id: '47'},
-		{id: '10', name: 'Slate', route: '/slate', material_id: '49'},
-		{id: '11', name: 'Glass', route: '/glass', material_id: '45'},
-		{id: '3', name: 'Quartzite', route: '/quartzite', material_id: '43'},
-	];
-	
+		httpPromise.success(function(quartzite) {
+			deferred.resolve(quartzite);
+		})
+		.error(function(error) {
+			console.log('Error...');
+		});
+		return deferred.promise;
+		}
+	};
+});
+
+
+marbleApp.controller('QuartziteCtrl', function($scope, quartziteFactory) {
+	$scope.quartziteStuff = {};
+	quartziteFactory.getQuartziteStuff()
+	.then(function(quartzite) {
+		$scope.quartziteStuff = quartzite;
+		console.log(quartzite);
+	}, function(error) {
+		console.log(error);
+	});
+});
+
+marbleApp.factory('quartzFactory', function($q, $http) {
+	return {
+		getQuartzStuff: function() {
+			var deferred = $q.defer(),
+			httpPromise = $http.get('/quartz');
+
+		httpPromise.success(function(quartz) {
+			deferred.resolve(quartz);
+		})
+		.error(function(error) {
+			console.log('Error...');
+		});
+		return deferred.promise;
+		}
+	};
+});
+
+
+marbleApp.controller('QuartzCtrl', function($scope, quartzFactory) {
+	$scope.quartzStuff = {};
+	quartzFactory.getQuartzStuff()
+	.then(function(quartz) {
+		$scope.quartzStuff = quartz;
+		console.log(quartz);
+	}, function(error) {
+		console.log(error);
+	});
+});
+
+marbleApp.factory('onyxFactory', function($q, $http) {
+	return {
+		getOnyxStuff: function() {
+			var deferred = $q.defer(),
+			httpPromise = $http.get('/onyx');
+
+		httpPromise.success(function(onyx) {
+			deferred.resolve(onyx);
+		})
+		.error(function(error) {
+			console.log('Error...');
+		});
+		return deferred.promise;
+		}
+	};
+});
+
+
+marbleApp.controller('OnyxCtrl', function($scope, onyxFactory) {
+	$scope.onyxStuff = {};
+	onyxFactory.getOnyxStuff()
+	.then(function(onyx) {
+		$scope.onyxStuff = onyx;
+		console.log(onyx);
+	}, function(error) {
+		console.log(error);
+	});
+});
+
+marbleApp.factory('travertineFactory', function($q, $http) {
+	return {
+		getTravertineStuff: function() {
+			var deferred = $q.defer(),
+			httpPromise = $http.get('/travertine');
+
+		httpPromise.success(function(travertine) {
+			deferred.resolve(travertine);
+		})
+		.error(function(error) {
+			console.log('Error...');
+		});
+		return deferred.promise;
+		}
+	};
+});
+
+
+marbleApp.controller('TravertineCtrl', function($scope, travertineFactory) {
+	$scope.travertineStuff = {};
+	travertineFactory.getTravertineStuff()
+	.then(function(travertine) {
+		$scope.travertineStuff = travertine;
+		console.log(travertine);
+	}, function(error) {
+		console.log(error);
+	});
+});
+
+marbleApp.factory('gemstoneFactory', function($q, $http) {
+	return {
+		getGemstoneStuff: function() {
+			var deferred = $q.defer(),
+			httpPromise = $http.get('/gemstone');
+
+		httpPromise.success(function(gemstone) {
+			deferred.resolve(gemstone);
+		})
+		.error(function(error) {
+			console.log('Error...');
+		});
+		return deferred.promise;
+		}
+	};
+});
+
+
+marbleApp.controller('GemstoneCtrl', function($scope, gemstoneFactory) {
+	$scope.gemstoneStuff = {};
+	gemstoneFactory.getGemstoneStuff()
+	.then(function(gemstone) {
+		$scope.gemstoneStuff = gemstone;
+		console.log(gemstone);
+	}, function(error) {
+		console.log(error);
+	});
+});
+
+marbleApp.factory('soapstoneFactory', function($q, $http) {
+	return {
+		getSoapstoneStuff: function() {
+			var deferred = $q.defer(),
+			httpPromise = $http.get('/soapstone');
+
+		httpPromise.success(function(soapstone) {
+			deferred.resolve(soapstone);
+		})
+		.error(function(error) {
+			console.log('Error...');
+		});
+		return deferred.promise;
+		}
+	};
+});
+
+
+marbleApp.controller('SoapstoneCtrl', function($scope, soapstoneFactory) {
+	$scope.soapstoneStuff = {};
+	soapstoneFactory.getSoapstoneStuff()
+	.then(function(soapstone) {
+		$scope.soapstoneStuff = soapstone;
+		console.log(soapstone);
+	}, function(error) {
+		console.log(error);
+	});
+});
+
+marbleApp.factory('limestoneFactory', function($q, $http) {
+	return {
+		getLimestoneStuff: function() {
+			var deferred = $q.defer(),
+			httpPromise = $http.get('/limestone');
+
+		httpPromise.success(function(limestone) {
+			deferred.resolve(limestone);
+		})
+		.error(function(error) {
+			console.log('Error...');
+		});
+		return deferred.promise;
+		}
+	};
+});
+
+
+marbleApp.controller('LimestoneCtrl', function($scope, limestoneFactory) {
+	$scope.limestoneStuff = {};
+	limestoneFactory.getLimestoneStuff()
+	.then(function(limestone) {
+		$scope.limestoneStuff = limestone;
+		console.log(limestone);
+	}, function(error) {
+		console.log(error);
+	});
+});
+
+marbleApp.factory('slateFactory', function($q, $http) {
+	return {
+		getSlateStuff: function() {
+			var deferred = $q.defer(),
+			httpPromise = $http.get('/slate');
+
+		httpPromise.success(function(slate) {
+			deferred.resolve(slate);
+		})
+		.error(function(error) {
+			console.log('Error...');
+		});
+		return deferred.promise;
+		}
+	};
+});
+
+
+marbleApp.controller('SlateCtrl', function($scope, slateFactory) {
+	$scope.slateStuff = {};
+	slateFactory.getSlateStuff()
+	.then(function(slate) {
+		$scope.slateStuff = slate;
+		console.log(slate);
+	}, function(error) {
+		console.log(error);
+	});
+});
+
+marbleApp.factory('glassFactory', function($q, $http) {
+	return {
+		getGlassStuff: function() {
+			var deferred = $q.defer(),
+			httpPromise = $http.get('/glass');
+
+		httpPromise.success(function(glass) {
+			deferred.resolve(glass);
+		})
+		.error(function(error) {
+			console.log('Error...');
+		});
+		return deferred.promise;
+		}
+	};
+});
+
+
+marbleApp.controller('GlassCtrl', function($scope, glassFactory) {
+	$scope.glassStuff = {};
+	glassFactory.getGlassStuff()
+	.then(function(glass) {
+		$scope.glassStuff = glass;
+		console.log(glass);
+	}, function(error) {
+		console.log(error);
+	});
 });
