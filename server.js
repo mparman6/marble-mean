@@ -17,6 +17,10 @@ app.get('/', (req, res) => {
 	res.sendFile(process.cwd() + "/public/index.html");
 });
 
+app.get('/home', (req, res) => {
+	res.sendFile(process.cwd() + "/public/index.html");
+});
+
 // routes
 
 app.get('/materials', (req, res) => {
