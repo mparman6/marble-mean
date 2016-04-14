@@ -1,7 +1,7 @@
 <!-- Material results from category search; ngRepeat -->
     <div class="container">
      <div class="row">   
-        <div class="col m3" ng-repeat="material in soapstoneStuff">
+        <div class="col m3" dir-paginate="material in soapstoneStuff | itemsPerPage: 20">
           <a href="/cosmicblack"><div class="card">
             <div class="card-image small">
                 <img src="http://marble.com/uploads/materials/330/300X300/thumbnail/Barroca_oylEUwktQHJ2pHv8tLHW.jpg">
@@ -14,6 +14,7 @@
         </div>        
       </div>
     </div>
+    <dir-pagination-controls id="pagination" template-url="\node_modules\angular-utils-pagination\dirPagination.tpl.html"></dir-pagination-controls>
 
 
     <div ui-view></div>

@@ -1,7 +1,7 @@
 <!-- Material results from category search; ngRepeat -->
     <div class="container">
      <div class="row">   
-        <div class="col m3" ng-repeat="material in glassStuff">
+        <div class="col m3" dir-paginate="material in glassStuff | itemsPerPage: 20">
           <a href="/cosmicblack"><div class="card">
             <div class="card-image small">
                 <img src="http://marble.com/uploads/materials/176/300X300/thumbnail/p8GFQFtX06EinEYXNH52.jpg">
@@ -14,6 +14,7 @@
         </div>        
       </div>
     </div>
+    <dir-pagination-controls id="pagination" template-url="\node_modules\angular-utils-pagination\dirPagination.tpl.html"></dir-pagination-controls>
 
 
     <div ui-view></div>

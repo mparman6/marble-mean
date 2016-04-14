@@ -1,7 +1,7 @@
-angular.module("marbleApp", ['angularUtils.directives.dirPagination']);
+angular.module("marbleApp", []);
 
 
-var marbleApp = angular.module("marbleApp", ['ui.router']);
+var marbleApp = angular.module("marbleApp", ['ui.router', 'angularUtils.directives.dirPagination']);
 
 
 marbleApp.config(function($stateProvider, $urlRouterProvider, $locationProvider) {
