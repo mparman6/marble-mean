@@ -1,5 +1,6 @@
 var marbleApp = angular.module("marbleApp", ['ui.router']);
 
+
 marbleApp.config(function($stateProvider, $urlRouterProvider, $locationProvider) {
 
   $urlRouterProvider.otherwise('/home');
@@ -127,13 +128,6 @@ marbleApp.controller('GraniteCtrl', function($scope, graniteFactory) {
 	}, function(error) {
 		console.log(error);
 	});
-	$scope.randomImage = function() {
-		path = path || 'images/';
-		var num = Math.floor(Math.random() * imgAr.length);
-		var img = imgAr[num];
-		var imgStr = '<img src="' + path + img + '" alt = "">';
-		document.write(imgStr);
-	}
 });
 
 
