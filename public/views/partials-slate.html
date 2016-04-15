@@ -2,7 +2,7 @@
     <div class="container">
      <div class="row">   
         <div class="col m3" dir-paginate="material in slateStuff | itemsPerPage: 20">
-          <a href="{{ material.info_url }}"><div class="card">
+          <a ui-sref="material({ materialId: material_name })"><div class="card">
             <div class="card-image small">
                 <img src="http://marble.com/uploads/materials/915/300X300/thumbnail/Pietra-Cardoso_CXlYAVyYBc84py2aHZw1.jpg">
             </div>

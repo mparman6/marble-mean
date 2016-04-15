@@ -33,11 +33,12 @@ app.get('/categories', (req, res) => {
 	});
 });
 
-app.get('/glass/nanocrystalizedglass', (req, res) => {
-	db.collection('materials').find({"info_url": "/glass/nanocrystalizedglass"}).toArray(function(err, results) {
+app.get('/materials', (req, res) => {
+	db.collection('materials').find({"material_name": "Nano Crystalized Glass"}).toArray(function(err, results) {
 		res.json(results);
 	});
 });
+
 
 app.get('/granite', (req, res) => {
 	db.collection('materials').find({"material_category_id": "35"}).toArray(function(err, results) {

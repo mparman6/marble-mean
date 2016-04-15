@@ -4,7 +4,7 @@ angular.module("marbleApp")
 	return {
 		getMaterialStuff: function() {
 			var deferred = $q.defer(),
-			httpPromise = $http.get('/glass/nanocrystalizedglass');
+			httpPromise = $http.get('/materials');
 
 		httpPromise.success(function(materials) {
 			deferred.resolve(materials);
@@ -16,4 +16,3 @@ angular.module("marbleApp")
 		}
 	};
 });
-

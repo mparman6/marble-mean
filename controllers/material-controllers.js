@@ -1,6 +1,6 @@
 var marbleApp = angular.module("marbleApp")
 
-.controller('MatInfoCtrl', function($scope, materialFactory) {
+.controller('MatInfoCtrl', function($scope, materialFactory, $stateParams) {
 	$scope.materialStuff = {};
 	materialFactory.getMaterialStuff()
 	.then(function(materials) {
@@ -9,6 +9,8 @@ var marbleApp = angular.module("marbleApp")
 	}, function(error) {
 		console.log(error);
 	});
+	$scope.material_name = $stateParams.materialId;
+	$scope.category_name = $stateParams.categoryId;
 })
 
 .controller('MainCtrl', function($scope, mongoFactory) {
