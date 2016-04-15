@@ -4,7 +4,6 @@ var app = express();
 var mongoose = require('mongoose');
 
 
-
 var material = require('./app/models/modelMaterials')
 mongoose.connect('mongodb://localhost/test');
 var db = mongoose.connection;
@@ -33,8 +32,9 @@ app.get('/categories', (req, res) => {
 	});
 });
 
-app.get('/materials', (req, res) => {
-	db.collection('materials').find({"material_name": "Nano Crystalized Glass"}).toArray(function(err, results) {
+app.get('/materials/:test', (req, res) => {
+	db.collection('materials').find({"material_name": req.params.test}).toArray(function(err, results) {
+		console.log(req.params.test);
 		res.json(results);
 	});
 });

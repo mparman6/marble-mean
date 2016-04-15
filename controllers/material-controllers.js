@@ -9,8 +9,8 @@ var marbleApp = angular.module("marbleApp")
 	}, function(error) {
 		console.log(error);
 	});
-	$scope.material_name = $stateParams.materialId;
-	$scope.category_name = $stateParams.categoryId;
+	$scope.name = $stateParams.materialName;
+	
 })
 
 .controller('MainCtrl', function($scope, mongoFactory) {
