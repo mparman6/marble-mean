@@ -21,10 +21,20 @@ app.get('/home', (req, res) => {
 	res.sendFile(process.cwd() + "/public/index.html");
 });
 
+// app.get('/:category/:material', function(req, res) {
+// 	res.sendFile(process.cwd() + "/public/views/partials-granite-matInfo.html");
+// });
+
 // routes
 
-app.get('/materials', (req, res) => {
+app.get('/categories', (req, res) => {
 	db.collection('categories').find({}).toArray(function(err, results) {
+		res.json(results);
+	});
+});
+
+app.get('/glass/nanocrystalizedglass', (req, res) => {
+	db.collection('materials').find({"info_url": "/glass/nanocrystalizedglass"}).toArray(function(err, results) {
 		res.json(results);
 	});
 });

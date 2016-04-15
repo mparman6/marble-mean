@@ -10003,7 +10003,8 @@ var allMaterials = [
     "main_color": "7",
     "page_title": "Nano Crystalized Glass Countertops for Kitchens & Bathrooms",
     "pattern": "0",
-    "last_update": "2015-07-02 09:48:12"
+    "last_update": "2015-07-02 09:48:12",
+    "info_url": "/glass/nanocrystalizedglass"
   },
   {
     "id": "1017",
@@ -10507,7 +10508,8 @@ var allMaterials = [
     "main_color": "6",
     "page_title": "Jade Green Slate Countertop Material for Kitchens and Bars",
     "pattern": "0",
-    "last_update": "2015-07-02 09:49:32"
+    "last_update": "2015-07-02 09:49:32",
+    "info_url": "/slate/jadegreenslate"
   },
   {
     "id": "1061",

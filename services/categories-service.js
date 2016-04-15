@@ -4,10 +4,10 @@ angular.module("marbleApp")
 	return {
 		getMongoStuff: function() {
 			var deferred = $q.defer(),
-			httpPromise = $http.get('/materials');
+			httpPromise = $http.get('/categories');
 
-		httpPromise.success(function(materials) {
-			deferred.resolve(materials);
+		httpPromise.success(function(categories) {
+			deferred.resolve(categories);
 		})
 		.error(function(error) {
 			console.log('Error...');
