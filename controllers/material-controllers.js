@@ -2,15 +2,14 @@ var marbleApp = angular.module("marbleApp")
 
 .controller('MatInfoCtrl', function($scope, materialFactory, $stateParams) {
 	$scope.materialStuff = {};
+	$scope.name = $stateParams.name;
 	materialFactory.getMaterialStuff($scope.name)
 	.then(function(material) {
 		$scope.materialStuff = material;
 		console.log(material);
 	}, function(error) {
 		console.log(error);
-	});
-	$scope.name = $stateParams.materialName;
-	
+	});	
 })
 
 .controller('MainCtrl', function($scope, mongoFactory) {

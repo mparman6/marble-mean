@@ -2,7 +2,7 @@
     <div class="container">
      <div class="row">   
         <div class="col m3" dir-paginate="material in glassStuff | itemsPerPage: 20">
-          <a ui-sref="material({ materialName: name })"><div class="card">
+          <a ui-sref="material({name: material.material_name})"><div class="card">
             <div class="card-image small">
                 <img src="http://marble.com/uploads/materials/176/300X300/thumbnail/p8GFQFtX06EinEYXNH52.jpg">
             </div>

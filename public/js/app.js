@@ -15,7 +15,7 @@ marbleApp.config(function($stateProvider, $urlRouterProvider, $locationProvider)
     controller: 'MainCtrl'
   })
   .state('material', {
-    url: '/material',
+    url: '/material/:name',
     templateUrl: '/public/views/partials-matInfo.html',
     controller: 'MatInfoCtrl'
   })
