@@ -4,7 +4,7 @@ angular.module("marbleApp")
 	return {
 		getMaterialStuff: function(name) {
 			var deferred = $q.defer(),
-			httpPromise = $http.get('/material/' +name);
+			httpPromise = $http.get('/category/' +name);
 
 		httpPromise.success(function(material) {
 			deferred.resolve(material);

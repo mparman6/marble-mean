@@ -12,6 +12,18 @@ var marbleApp = angular.module("marbleApp")
 	});	
 })
 
+.controller('ScrollCtrl', function($scope, scrollFactory, $stateParams) {
+	$scope.scrollStuff = {};
+	$scope.category = $stateParams.category;
+	scrollFactory.getScrollStuff($scope.category)
+	.then(function(scrolls) {
+		$scope.scrollStuff = scrolls;
+		console.log(scrolls);
+	}, function(error) {
+		console.log(error);
+	});	
+})
+
 .controller('MainCtrl', function($scope, mongoFactory) {
 	$scope.mongoStuff = {};
 	mongoFactory.getMongoStuff()

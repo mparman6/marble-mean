@@ -32,7 +32,14 @@ app.get('/categories', (req, res) => {
 	});
 });
 
-app.get('/material/:name', (req, res) => {
+app.get('/materialscroll/:category', (req, res) => {
+	db.collection('materials').find({"material_category_id": req.params.category}).toArray(function(err, results) {
+		// console.log(req.params.category);
+		res.json(results);
+	});
+});
+
+app.get('/category/:name', (req, res) => {
 	db.collection('materials').find({"material_name": req.params.name}).toArray(function(err, results) {
 		console.log(req.params.name);
 		res.json(results);

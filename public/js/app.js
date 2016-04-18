@@ -15,10 +15,16 @@ marbleApp.config(function($stateProvider, $urlRouterProvider, $locationProvider)
     controller: 'MainCtrl'
   })
   .state('material', {
-    url: '/material/:name',
+    url: '/category/:name',
     templateUrl: '/public/views/partials-matInfo.html',
     controller: 'MatInfoCtrl'
   })
+  .state('materialScroll', {
+    url: '/material/:category',
+    templateUrl: '/public/views/partials-categoryScroll.html',
+    controller: 'ScrollCtrl'
+  })
+
   .state('granite', {
     url: '/granite',
     templateUrl: '/public/views/partials-granite.html',
