@@ -19,7 +19,7 @@
         <nav>
           <div class="nav-wrapper" id="gray">
             <ul class="hide-on-med-and-down">
-              <li><a href="/home">Home</a></li>
+              <li><a href="/home">Materials</a></li>
               <li><a href="/granite">Granite</a></li>
               <li><a href="/marble">Marble</a></li>
               <li><a href="/quartzite">Quartzite</a></li>
@@ -39,7 +39,7 @@
 <!-- Main search bar -->
       <nav style="background-color: #d56324!important">
         <div class="nav-wrapper">
-          <form action="{{ search }}" method="GET">
+          <form ng-controller="SearchCtrl" action="{{ search }}" method="GET">
             <div class="input-field">
               <input id="search" type="search" required placeholder="Search" ng-model="search">
               <label for="search"><i class="material-icons">search</i></label>
@@ -76,6 +76,7 @@
     <script src="/services/slate-service.js"></script>
     <script src="/services/glass-service.js"></script>
     <script src="/services/materials-service.js"></script>
+    <script src="/services/scroll-service.js"></script>
     <script src="./app/models/modelMaterials.js"></script>
     <script src="/server.js"></script>    
     

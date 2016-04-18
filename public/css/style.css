@@ -27,3 +27,11 @@
 #reveal {
 	background-color: #d9d9d9;
 }
+
+#backlink {
+	float: left;
+}
+
+#nextlink {
+	float: right;
+}
