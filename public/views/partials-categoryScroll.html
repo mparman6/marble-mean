@@ -1,11 +1,9 @@
 <div class="container">
      <div class="row">
-      <div class="col m12">
-        <dir-pagination-controls id="pagination" template-url="\node_modules\angular-utils-pagination\dirPagination.tpl.html"></dir-pagination-controls>
-      </div>
       
         <div class="col m12" dir-paginate="material in scrollStuff | itemsPerPage: 1">
-            <a ui-sref="material({name: material.material_name})"><div class="card">
+          <dir-pagination-controls id="pagination" template-url="\node_modules\angular-utils-pagination\dirPagination.tpl.html"></dir-pagination-controls>
+            <div class="card">
               <div class="card-image waves-effect waves-block waves-light">
                 <img class="activator" src="http://marble.com/uploads/materials/68/1280X720/granite_Aspen-White_BxifiE09G17Y1jZPlk11.jpg">
               </div>
@@ -16,7 +14,7 @@
                 <span class="card-title grey-text text-darken-4">{{ material.material_name }}<i class="material-icons right">close</i></span>
                 <p>{{ material.material_description }}</p>
               </div>
-            </div></a>
+            </div>
         </div>        
       </div>    
     </div>
