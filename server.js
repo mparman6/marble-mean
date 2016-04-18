@@ -32,9 +32,9 @@ app.get('/categories', (req, res) => {
 	});
 });
 
-app.get('/materials/:test', (req, res) => {
-	db.collection('materials').find({"material_name": req.params.test}).toArray(function(err, results) {
-		console.log(req.params.test);
+app.get('/material/:name', (req, res) => {
+	db.collection('materials').find({"material_name": req.params.name}).toArray(function(err, results) {
+		console.log(req.params.name);
 		res.json(results);
 	});
 });

@@ -2,12 +2,12 @@ angular.module("marbleApp")
 
 .factory('materialFactory', function($q, $http, $stateParams) {
 	return {
-		getMaterialStuff: function() {
+		getMaterialStuff: function(name) {
 			var deferred = $q.defer(),
-			httpPromise = $http.get('/materials/:test');
+			httpPromise = $http.get('/material/' + name);
 
-		httpPromise.success(function(materials) {
-			deferred.resolve(materials);
+		httpPromise.success(function(material) {
+			deferred.resolve(material);
 		})
 		.error(function(error) {
 			console.log('Error...', error);

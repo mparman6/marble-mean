@@ -11,11 +11,11 @@ marbleApp.config(function($stateProvider, $urlRouterProvider, $locationProvider)
   $stateProvider
   .state('categories', {
     url: '/home',
-    templateUrl: 'public//views/home.html',
+    templateUrl: 'public/views/home.html',
     controller: 'MainCtrl'
   })
   .state('material', {
-    url: '/materials/:materialName',
+    url: '/material',
     templateUrl: '/public/views/partials-matInfo.html',
     controller: 'MatInfoCtrl'
   })
