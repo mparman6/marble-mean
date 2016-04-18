@@ -164,4 +164,16 @@ var marbleApp = angular.module("marbleApp")
 	}, function(error) {
 		console.log(error);
 	});
-});
+})
+
+.controller('BackCtrl', function($scope, backFactory, $stateParams) {
+	$scope.backStuff = {};
+	$scope.id = $stateParams.id;
+	backFactory.getBackStuff($scope.id)
+	.then(function(id) {
+		$scope.backStuff = id;
+		console.log(id);
+	}, function(error) {
+		console.log(error);
+	});	
+})
