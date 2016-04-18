@@ -1,11 +1,23 @@
 var marbleApp = angular.module("marbleApp")
 
+.controller('MatInfoCtrl', function($scope, materialFactory, $stateParams) {
+	$scope.materialStuff = {};
+	$scope.name = $stateParams.name;
+	materialFactory.getMaterialStuff($scope.name)
+	.then(function(material) {
+		$scope.materialStuff = material;
+		console.log(material);
+	}, function(error) {
+		console.log(error);
+	});	
+})
+
 .controller('MainCtrl', function($scope, mongoFactory) {
 	$scope.mongoStuff = {};
 	mongoFactory.getMongoStuff()
-	.then(function(materials) {
-		$scope.mongoStuff = materials;
-		console.log(materials);
+	.then(function(categories) {
+		$scope.mongoStuff = categories;
+		console.log(categories);
 	}, function(error) {
 		console.log(error);
 	});

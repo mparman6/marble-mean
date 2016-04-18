@@ -4,7 +4,6 @@ var app = express();
 var mongoose = require('mongoose');
 
 
-
 var material = require('./app/models/modelMaterials')
 mongoose.connect('mongodb://localhost/test');
 var db = mongoose.connection;
@@ -21,13 +20,25 @@ app.get('/home', (req, res) => {
 	res.sendFile(process.cwd() + "/public/index.html");
 });
 
+// app.get('/:category/:material', function(req, res) {
+// 	res.sendFile(process.cwd() + "/public/views/partials-granite-matInfo.html");
+// });
+
 // routes
 
-app.get('/materials', (req, res) => {
+app.get('/categories', (req, res) => {
 	db.collection('categories').find({}).toArray(function(err, results) {
 		res.json(results);
 	});
 });
+
+app.get('/material/:name', (req, res) => {
+	db.collection('materials').find({"material_name": req.params.name}).toArray(function(err, results) {
+		console.log(req.params.name);
+		res.json(results);
+	});
+});
+
 
 app.get('/granite', (req, res) => {
 	db.collection('materials').find({"material_category_id": "35"}).toArray(function(err, results) {
