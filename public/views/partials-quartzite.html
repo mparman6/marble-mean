@@ -4,7 +4,7 @@
         <div class="col m3" dir-paginate="material in quartziteStuff | itemsPerPage: 20">
           <a ui-sref="material({name: material.material_name})"><div class="card">
             <div class="card-image small">
-                <img src="http://marble.com/uploads/materials/149/300X300/thumbnail/Elegant-Brown_sngwvjehl6uxQlqSgevH.jpg">
+                <img ng-src="http://marble.com/uploads/materials/{{material.material_id}}/300X300/thumbnail/{{material.material_photo_name}}">
             </div>
             <div class="card-content">
               <p>{{ material.material_name }}</p>
