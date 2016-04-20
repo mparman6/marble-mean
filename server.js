@@ -60,7 +60,7 @@ app.get('/photos', (req, res) => {
 });
 
 app.get('/granite', (req, res) => {
-	db.collection('matTest').find({"material_category_id": "35"}).toArray(function(err, results) {
+	db.collection('materials').find({"material_category_id": "35"}).toArray(function(err, results) {
 		res.json(results);
 	});
 });
