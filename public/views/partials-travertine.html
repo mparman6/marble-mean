@@ -15,7 +15,7 @@
         </div>        
       </div>
     </div>
-    <dir-pagination-controls id="pagination" template-url="\node_modules\angular-utils-pagination\dirPagination.tpl.html"></dir-pagination-controls>
+    <dir-pagination-controls id="pagination" on-page-change="myMethod(newPageNumber, oldPageNumber)" template-url="\node_modules\angular-utils-pagination\dirPagination.tpl.html"></dir-pagination-controls>
 
 
     <div ui-view></div>

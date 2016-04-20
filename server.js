@@ -53,9 +53,14 @@ app.get('/category/:name', (req, res) => {
 	});
 });
 
+app.get('/photos', (req, res) => {
+	db.collection('photos').find({}).toArray(function(err, results) {
+		res.json(results);
+	});
+});
 
 app.get('/granite', (req, res) => {
-	db.collection('materials').find({"material_category_id": "35"}).toArray(function(err, results) {
+	db.collection('matTest').find({"material_category_id": "35"}).toArray(function(err, results) {
 		res.json(results);
 	});
 });

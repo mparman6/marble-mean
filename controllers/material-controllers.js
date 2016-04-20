@@ -1,5 +1,16 @@
 var marbleApp = angular.module("marbleApp")
 
+.controller('ImageCtrl', function($scope, imageFactory) {
+	$scope.allPhotos = {};
+	$scope.test = "test successful";
+	imageFactory.getAllPhotos()
+	.then(function(images) {
+		$scope.allPhotos = images;
+	}, function(error) {
+		console.log(error);
+	});
+})
+
 .controller('MatInfoCtrl', function($scope, materialFactory, $stateParams) {
 	$scope.materialStuff = {};
 	$scope.name = $stateParams.name;
@@ -37,6 +48,11 @@ var marbleApp = angular.module("marbleApp")
 
 .controller('GraniteCtrl', function($scope, graniteFactory) {
 	$scope.graniteStuff = {};
+	$scope.myMethod = function(newPageNumber, oldPageNumber) {
+		$(".reset").click(function() {
+			$(window).scrollTop(top);
+		});
+	}
 	graniteFactory.getGraniteStuff()
 	.then(function(granite) {
 		$scope.graniteStuff = granite;
@@ -49,6 +65,11 @@ var marbleApp = angular.module("marbleApp")
 
 .controller('MarbleCtrl', function($scope, marbleFactory) {
 	$scope.marbleStuff = {};
+	$scope.myMethod = function(newPageNumber, oldPageNumber) {
+		$(".reset").click(function() {
+			$(window).scrollTop(top);
+		});
+	}
 	marbleFactory.getMarbleStuff()
 	.then(function(marble) {
 		$scope.marbleStuff = marble;
@@ -61,6 +82,11 @@ var marbleApp = angular.module("marbleApp")
 
 .controller('QuartziteCtrl', function($scope, quartziteFactory) {
 	$scope.quartziteStuff = {};
+	$scope.myMethod = function(newPageNumber, oldPageNumber) {
+		$(".reset").click(function() {
+			$(window).scrollTop(top);
+		});
+	}
 	quartziteFactory.getQuartziteStuff()
 	.then(function(quartzite) {
 		$scope.quartziteStuff = quartzite;
@@ -73,6 +99,11 @@ var marbleApp = angular.module("marbleApp")
 
 .controller('QuartzCtrl', function($scope, quartzFactory) {
 	$scope.quartzStuff = {};
+	$scope.myMethod = function(newPageNumber, oldPageNumber) {
+		$(".reset").click(function() {
+			$(window).scrollTop(top);
+		});
+	}
 	quartzFactory.getQuartzStuff()
 	.then(function(quartz) {
 		$scope.quartzStuff = quartz;
@@ -85,6 +116,11 @@ var marbleApp = angular.module("marbleApp")
 
 .controller('OnyxCtrl', function($scope, onyxFactory) {
 	$scope.onyxStuff = {};
+	$scope.myMethod = function(newPageNumber, oldPageNumber) {
+		$(".reset").click(function() {
+			$(window).scrollTop(top);
+		});
+	}
 	onyxFactory.getOnyxStuff()
 	.then(function(onyx) {
 		$scope.onyxStuff = onyx;
@@ -97,6 +133,11 @@ var marbleApp = angular.module("marbleApp")
 
 .controller('TravertineCtrl', function($scope, travertineFactory) {
 	$scope.travertineStuff = {};
+	$scope.myMethod = function(newPageNumber, oldPageNumber) {
+		$(".reset").click(function() {
+			$(window).scrollTop(top);
+		});
+	}
 	travertineFactory.getTravertineStuff()
 	.then(function(travertine) {
 		$scope.travertineStuff = travertine;
@@ -109,6 +150,11 @@ var marbleApp = angular.module("marbleApp")
 
 .controller('GemstoneCtrl', function($scope, gemstoneFactory) {
 	$scope.gemstoneStuff = {};
+	$scope.myMethod = function(newPageNumber, oldPageNumber) {
+		$(".reset").click(function() {
+			$(window).scrollTop(top);
+		});
+	}
 	gemstoneFactory.getGemstoneStuff()
 	.then(function(gemstone) {
 		$scope.gemstoneStuff = gemstone;
@@ -121,6 +167,11 @@ var marbleApp = angular.module("marbleApp")
 
 .controller('SoapstoneCtrl', function($scope, soapstoneFactory) {
 	$scope.soapstoneStuff = {};
+	$scope.myMethod = function(newPageNumber, oldPageNumber) {
+		$(".reset").click(function() {
+			$(window).scrollTop(top);
+		});
+	}
 	soapstoneFactory.getSoapstoneStuff()
 	.then(function(soapstone) {
 		$scope.soapstoneStuff = soapstone;
@@ -133,6 +184,11 @@ var marbleApp = angular.module("marbleApp")
 
 .controller('LimestoneCtrl', function($scope, limestoneFactory) {
 	$scope.limestoneStuff = {};
+	$scope.myMethod = function(newPageNumber, oldPageNumber) {
+		$(".reset").click(function() {
+			$(window).scrollTop(top);
+		});
+	}
 	limestoneFactory.getLimestoneStuff()
 	.then(function(limestone) {
 		$scope.limestoneStuff = limestone;
@@ -145,6 +201,11 @@ var marbleApp = angular.module("marbleApp")
 
 .controller('SlateCtrl', function($scope, slateFactory) {
 	$scope.slateStuff = {};
+	$scope.myMethod = function(newPageNumber, oldPageNumber) {
+		$(".reset").click(function() {
+			$(window).scrollTop(top);
+		});
+	}
 	slateFactory.getSlateStuff()
 	.then(function(slate) {
 		$scope.slateStuff = slate;
@@ -157,6 +218,11 @@ var marbleApp = angular.module("marbleApp")
 
 .controller('GlassCtrl', function($scope, glassFactory) {
 	$scope.glassStuff = {};
+	$scope.myMethod = function(newPageNumber, oldPageNumber) {
+		$(".reset").click(function() {
+			$(window).scrollTop(top);
+		});
+	}
 	glassFactory.getGlassStuff()
 	.then(function(glass) {
 		$scope.glassStuff = glass;
