@@ -36,7 +36,6 @@
 	float: right;
 }
 
-#color {
-	color: #000000;
+.center {
+	text-align: center;
 }
-
