@@ -25,11 +25,23 @@ var marbleApp = angular.module("marbleApp")
 
 .controller('ScrollCtrl', function($scope, scrollFactory, $stateParams) {
 	$scope.scrollStuff = {};
-	$scope.id = $stateParams.id;
-	scrollFactory.getScrollStuff($scope.id)
+	$scope.name = $stateParams.name;
+	scrollFactory.getScrollStuff($scope.name)
 	.then(function(scrolls) {
 		$scope.scrollStuff = scrolls;
 		console.log(scrolls);
+	}, function(error) {
+		console.log(error);
+	});	
+})
+
+.controller('ScrollCtrl2', function($scope, scrollFactory2, $stateParams) {
+	$scope.allStuff = {};
+	$scope.id = $stateParams.id;
+	scrollFactory2.getAllStuff($scope.id)
+	.then(function(allMats) {
+		$scope.allStuff = allMats;
+		console.log(allMats);
 	}, function(error) {
 		console.log(error);
 	});	

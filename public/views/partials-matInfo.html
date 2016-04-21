@@ -1,7 +1,7 @@
 <div class="container">
 
     <div class="row">
-      <div class="col m12" dir-paginate="material in materialStuff | itemsPerPage: 1">
+      <div class="col m12" dir-paginate="material in scrollStuff | itemsPerPage: 1">
         <dir-pagination-controls id="" on-page-change="myMethod(newPageNumber, oldPageNumber)" template-url="\node_modules\angular-utils-pagination\dirPagination.tpl2.html"></dir-pagination-controls>
 
         <span id="backlink">{{ material.material_name}}</span>
@@ -11,7 +11,7 @@
 
 
      <div class="row">      
-        <div class="col m12" dir-paginate="material in materialStuff | itemsPerPage: 1">
+        <div class="col m12" dir-paginate="material in scrollStuff | itemsPerPage: 1">
           <!-- <dir-pagination-controls id="" on-page-change="myMethod(newPageNumber, oldPageNumber)" template-url="\node_modules\angular-utils-pagination\dirPagination.tpl2.html"></dir-pagination-controls> -->
             <div class="card">
               <div class="card-content">
