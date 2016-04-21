@@ -19,6 +19,11 @@ marbleApp.config(function($stateProvider, $urlRouterProvider, $locationProvider)
     templateUrl: '/public/views/partials-matInfo.html',
     controller: 'MatInfoCtrl'
   })
+  .state('material2', {
+    url: '/stuff/:id',
+    templateUrl: '/public/views/partials-matInfo2.html',
+    controller: 'ScrollCtrl'
+  })
   .state('search', {
     url: '/material/:name',
     templateUrl: '/public/views/partials-search.html',

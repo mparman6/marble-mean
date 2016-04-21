@@ -39,16 +39,16 @@ app.get('/materialscroll/:category', (req, res) => {
 	});
 });
 
-app.get('/back/:id', (req, res) => {
-	db.collection('materials').find({"material_category_id": req.params.id}).toArray(function(err, results) {
-		console.log(req.params.id);
+app.get('/category/:name', (req, res) => {
+	db.collection('otherPhotos').find({"material_name": req.params.name}).toArray(function(err, results) {
+		console.log(req.params.name);
 		res.json(results);
 	});
 });
 
-app.get('/category/:name', (req, res) => {
-	db.collection('otherPhotos').find({"material_category_id": req.params.name}).toArray(function(err, results) {
-		console.log(req.params.name);
+app.get('/stuff/:id', (req, res) => {
+	db.collection('otherPhotos').find({"material_category_id": req.params.id}).toArray(function(err, results) {
+		console.log(req.params.id);
 		res.json(results);
 	});
 });
