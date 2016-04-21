@@ -47,7 +47,14 @@ app.get('/back/:id', (req, res) => {
 });
 
 app.get('/category/:name', (req, res) => {
-	db.collection('otherPhotos').find({"material_name": req.params.name}).toArray(function(err, results) {
+	db.collection('otherPhotos').find({"material_category_id": req.params.name}).toArray(function(err, results) {
+		console.log(req.params.name);
+		res.json(results);
+	});
+});
+
+app.post('/material/:name', (req, res) => {
+	db.collection('materials').find({$text:{$search: req.params.name}}).toArray(function(err, results) {
 		console.log(req.params.name);
 		res.json(results);
 	});
