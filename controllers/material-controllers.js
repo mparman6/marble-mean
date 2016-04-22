@@ -25,8 +25,8 @@ var marbleApp = angular.module("marbleApp")
 
 .controller('ScrollCtrl', function($scope, scrollFactory, $stateParams) {
 	$scope.scrollStuff = {};
-	$scope.name = $stateParams.name;
-	scrollFactory.getScrollStuff($scope.name)
+	$scope.id = $stateParams.id;
+	scrollFactory.getScrollStuff($scope.id)
 	.then(function(scrolls) {
 		$scope.scrollStuff = scrolls;
 		console.log(scrolls);

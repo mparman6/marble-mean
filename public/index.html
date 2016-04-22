@@ -39,7 +39,7 @@
 <!-- Main search bar -->
       <nav style="background-color: #d56324!important" ng-controller="SearchCtrl">
         <div class="nav-wrapper">
-          <form  action="/material/Glass" method="GET">
+          <form  action="{{name}}" method="GET">
             <div class="input-field">
               <input id="search" type="search" required placeholder="Search" ng-model="name">
               <label for="search"><i class="material-icons">search</i></label>

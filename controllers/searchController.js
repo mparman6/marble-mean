@@ -2,8 +2,8 @@ var marbleApp = angular.module('marbleApp')
 
 .controller('SearchCtrl', function($scope, searchFactory, $stateParams) {
 	$scope.searchMaterial = {};
-	$scope.name = $stateParams.category;
-	searchFactory.getSearch($scope.category)
+	$scope.name = $stateParams.name;
+	searchFactory.getSearch($scope.name)
 	.then(function(material) {
 		$scope.searchMaterial = material;
 		console.log(material);

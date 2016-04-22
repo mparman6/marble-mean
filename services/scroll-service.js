@@ -2,9 +2,9 @@ angular.module("marbleApp")
 
 .factory('scrollFactory', function($q, $http, $stateParams) {
 	return {
-		getScrollStuff: function(name) {
+		getScrollStuff: function(id) {
 			var deferred = $q.defer(),
-			httpPromise = $http.get('/stuff/' + name);
+			httpPromise = $http.get('/stuff/' + id);
 
 		httpPromise.success(function(scrolls) {
 			deferred.resolve(scrolls);

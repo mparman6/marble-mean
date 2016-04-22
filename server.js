@@ -46,10 +46,9 @@ app.get('/category/:name', (req, res) => {
 	});
 });
 
-app.get('/stuff/:name', (req, res) => {
-	db.collection('otherPhotos').find({"material_name": req.params.name}).toArray(function(err, results) {
+app.get('/stuff/:id', (req, res) => {
+	db.collection('otherPhotos').find({"material_category_id": req.params.id}).toArray(function(err, results) {
 		console.log(req.params.id);
-		console.log(req.params.name);
 		res.json(results);
 	});
 });
@@ -61,8 +60,8 @@ app.get('/all/:id', (req, res) => {
 	});
 });
 
-app.post('/material/:name', (req, res) => {
-	db.collection('materials').find({$text:{$search: req.params.name}}).toArray(function(err, results) {
+app.get('/search/:name', (req, res) => {
+	db.collection('materials').find({"$text":{"$search": req.params.name}}).toArray(function(err, results) {
 		console.log(req.params.name);
 		res.json(results);
 	});

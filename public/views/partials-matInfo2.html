@@ -1,18 +1,17 @@
 <div class="container">
 
-    <!-- <div class="row" ng-controller="GraniteCtrl">
-      <div class="col m12" dir-paginate="material in graniteStuff | itemsPerPage: 1">
-        <dir-pagination-controls id="" on-page-change="myMethod(newPageNumber, oldPageNumber)" template-url="\node_modules\angular-utils-pagination\dirPagination.tpl2.html"></dir-pagination-controls>
+    <!-- <div class="row">
+      <div class="col m12" dir-paginate="material in allStuff | itemsPerPage: 1" pagination-id="noButtons">
+        <dir-pagination-controls pagination-id="noButtons" on-page-change="myMethod(newPageNumber, oldPageNumber)" template-url="\node_modules\angular-utils-pagination\dirPagination.tpl3.html"></dir-pagination-controls>
 
-        <span id="backlink">{{ material.material_name}}</span>
-        <span id="nextlink">{{ material.material_name}}</span>
+      
       </div>
     </div> -->
 
 
      <div class="row">      
         <div class="col m12" dir-paginate="material in allStuff | itemsPerPage: 1">
-          <dir-pagination-controls id="" on-page-change="myMethod(newPageNumber, oldPageNumber)" template-url="\node_modules\angular-utils-pagination\dirPagination.tpl2.html"></dir-pagination-controls>
+          <dir-pagination-controls id="pagination" max-size="15" on-page-change="myMethod(newPageNumber, oldPageNumber)" template-url="\node_modules\angular-utils-pagination\dirPagination.tpl.html"></dir-pagination-controls>
 
             <div class="card">
               <div class="card-content">
