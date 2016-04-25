@@ -15,7 +15,7 @@ marbleApp.config(function($stateProvider, $urlRouterProvider, $locationProvider)
     controller: 'MainCtrl'
   })
   .state('material', {
-    url: '/material/:id/:name',
+    url: '/material/:id/:offset',
     templateUrl: '/public/views/partials-matInfo.html',
     controller: 'ScrollCtrl'
   })
@@ -25,7 +25,7 @@ marbleApp.config(function($stateProvider, $urlRouterProvider, $locationProvider)
     controller: 'ScrollCtrl2'
   })
   .state('search', {
-    url: '/material/:name',
+    url: '/search/:name',
     templateUrl: '/public/views/partials-search.html',
     controller: 'SearchCtrl'
   })

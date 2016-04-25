@@ -1,13 +1,13 @@
 angular.module("marbleApp")
 
-.factory('scrollFactory2', function($q, $http, $stateParams) {
+.factory('searchFactory', function($q, $http, $stateParams) {
 	return {
-		getAllStuff: function(id) {
+		getSearchResults: function(name) {
 			var deferred = $q.defer(),
-			httpPromise = $http.get('/all/' +id);
+			httpPromise = $http.get('/search/' +name);
 
-		httpPromise.success(function(allMats) {
-			deferred.resolve(allMats);
+		httpPromise.success(function(results) {
+			deferred.resolve(results);
 		})
 		.error(function(error) {
 			console.log('Error...', error);

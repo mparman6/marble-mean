@@ -11,38 +11,47 @@ var marbleApp = angular.module("marbleApp")
 	});
 })
 
-.controller('MatInfoCtrl', function($scope, materialFactory, $stateParams) {
+.controller('MatInfoCtrl', function($scope, $rootScope, materialFactory, $stateParams) {
 	$scope.materialStuff = {};
 	$scope.name = $stateParams.name;
 	materialFactory.getMaterialStuff($scope.name)
 	.then(function(material) {
-		$scope.materialStuff = material;
+		$rootScope.materialStuff = material;
 		console.log(material);
 	}, function(error) {
 		console.log(error);
 	});	
 })
 
-.controller('ScrollCtrl', function($scope, scrollFactory, $stateParams) {
-	$scope.scrollStuff = {};
+.controller('ScrollCtrl', function($scope, $rootScope, scrollFactory, $stateParams) {
+	// $scope.scrollStuff = {};
 	$scope.id = $stateParams.id;
-	$scope.name = $stateParams.name;
-	scrollFactory.getScrollStuff($scope.id, $scope.name)
+	$scope.offset = $stateParams.offset;
+	scrollFactory.getScrollStuff($scope.id, $scope.offset)
 	.then(function(scrolls) {
+		// loop for pointer
+		
+		var matArray = scrolls;
+		console.log($scope.offset);
+		for(var i = 0; i < matArray.length; i++) {
+			var pointer = (i + $scope.offset) % matArray.length;
+			// console.log(matArray[pointer]);
+		}
+
 		$scope.scrollStuff = scrolls;
-		console.log(scrolls);
+		// console.log(scrolls);
 	}, function(error) {
 		console.log(error);
 	});	
 })
 
-.controller('ScrollCtrl2', function($scope, scrollFactory2, $stateParams) {
-	$scope.allStuff = {};
-	$scope.id = $stateParams.id;
-	scrollFactory2.getAllStuff($scope.id)
-	.then(function(allMats) {
-		$scope.allStuff = allMats;
-		console.log(allMats);
+.controller('SearchCtrl', function($scope, $rootScope, searchFactory) {
+	$scope.searchResults = {};
+	$scope.name = $rootScope.materialStuff;
+	searchFactory.getSearchResults($scope.name)
+	.then(function(results) {
+		$scope.searchResults = results;
+		// console.log(results);
 	}, function(error) {
 		console.log(error);
 	});	
@@ -53,13 +62,13 @@ var marbleApp = angular.module("marbleApp")
 	mongoFactory.getMongoStuff()
 	.then(function(categories) {
 		$scope.mongoStuff = categories;
-		console.log(categories);
+		// console.log(categories);
 	}, function(error) {
 		console.log(error);
 	});
 })
 
-.controller('GraniteCtrl', function($scope, graniteFactory) {
+.controller('GraniteCtrl', function($scope, $rootScope, graniteFactory) {
 	$scope.graniteStuff = {};
 	$scope.myMethod = function(newPageNumber, oldPageNumber) {
 		$(".reset").click(function() {
@@ -68,8 +77,15 @@ var marbleApp = angular.module("marbleApp")
 	}
 	graniteFactory.getGraniteStuff()
 	.then(function(granite) {
+
+		var firstArray = granite;
+		var index;
+		for (index = 0; index < firstArray.length; index++) {
+			// console.log(index);			
+		}
+
 		$scope.graniteStuff = granite;
-		console.log(granite);
+		// console.log(granite);
 	}, function(error) {
 		console.log(error);
 	});
