@@ -27,15 +27,16 @@ var marbleApp = angular.module("marbleApp")
 	// $scope.scrollStuff = {};
 	$scope.id = $stateParams.id;
 	$scope.offset = $stateParams.offset;
-	scrollFactory.getScrollStuff($scope.id, $scope.offset)
+	scrollFactory.getScrollStuff($scope.id)
 	.then(function(scrolls) {
 		// loop for pointer
 		
 		var matArray = scrolls;
-		console.log($scope.offset);
+		var offset = $scope.offset;
+		console.log(offset);
 		for(var i = 0; i < matArray.length; i++) {
-			var pointer = (i + $scope.offset) % matArray.length;
-			// console.log(matArray[pointer]);
+			var pointer = (i + 1) % matArray.length;
+			console.log(matArray[pointer]);
 		}
 
 		$scope.scrollStuff = scrolls;
@@ -77,14 +78,7 @@ var marbleApp = angular.module("marbleApp")
 	}
 	graniteFactory.getGraniteStuff()
 	.then(function(granite) {
-
-		var firstArray = granite;
-		var index;
-		for (index = 0; index < firstArray.length; index++) {
-			// console.log(index);			
-		}
-
-		$scope.graniteStuff = granite;
+	$scope.graniteStuff = granite;
 		// console.log(granite);
 	}, function(error) {
 		console.log(error);
