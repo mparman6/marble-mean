@@ -33,7 +33,7 @@ var marbleApp = angular.module("marbleApp")
 		
 		var matArray = scrolls;
 		var offset = parseInt($scope.offset, 10);
-		console.log(offset);
+		console.log($scope.id);
 		for(var i = 0; i < matArray.length; i++) {
 			var pointer = (i + offset) % matArray.length;
 			console.log(matArray[pointer]);
@@ -79,7 +79,7 @@ var marbleApp = angular.module("marbleApp")
 	graniteFactory.getGraniteStuff()
 	.then(function(granite) {
 	$scope.graniteStuff = granite;
-		// console.log(granite);
+		console.log(granite);
 	}, function(error) {
 		console.log(error);
 	});
