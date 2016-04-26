@@ -33,7 +33,7 @@ var marbleApp = angular.module("marbleApp")
 		
 		var matArray = scrolls;
 		var offset = parseInt($scope.offset, 10);
-		console.log($scope.id);
+		console.log(offset);
 		for(var i = 0; i < matArray.length; i++) {
 			var pointer = (i + offset) % matArray.length;
 			console.log(matArray[pointer]);
