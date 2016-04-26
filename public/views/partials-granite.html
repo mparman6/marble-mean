@@ -2,7 +2,7 @@
   <!-- Material results from category search; ngRepeat -->
   <div class="container">
      <div class="row"> 
-        <div class="col m3" dir-paginate="material in graniteStuff | itemsPerPage: 200">
+        <div class="col m3" dir-paginate="material in graniteStuff | filter: q | itemsPerPage: pageSize">
           <a ui-sref="material({id: material.material_category_id, offset: $index})"><div class="card">
             <div class="card-image small">
                 <img ng-src="http://marble.com/uploads/materials/{{material.material_id}}/300X300/thumbnail/{{material.material_photo_name}}">
@@ -17,7 +17,7 @@
         </div>        
       </div>
     </div>
-    <dir-pagination-controls id="pagination" max-size="7" on-page-change="myMethod(newPageNumber, oldPageNumber)" template-url="\node_modules\angular-utils-pagination\dirPagination.tpl.html"></dir-pagination-controls>
+    <!-- <dir-pagination-controls id="pagination" max-size="7" on-page-change="myMethod(newPageNumber, oldPageNumber)" template-url="\node_modules\angular-utils-pagination\dirPagination.tpl.html"></dir-pagination-controls> -->
 
 
 

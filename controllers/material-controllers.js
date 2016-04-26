@@ -34,11 +34,11 @@ var marbleApp = angular.module("marbleApp")
 		var newArray = [];
 		var matArray = scrolls;
 		var offset = parseInt($scope.offset, 10);
-		console.log(offset);
+		// console.log(offset);
 		for(var i = 0; i < matArray.length; i++) {
 			var pointer = (i + offset) % matArray.length;
 			newArray.push(matArray[pointer]);
-			console.log(newArray);
+			// console.log(newArray);
 		}
 
 		$scope.scrollStuff = newArray;
@@ -72,7 +72,7 @@ var marbleApp = angular.module("marbleApp")
 })
 
 .controller('GraniteCtrl', function($scope, $rootScope, graniteFactory) {
-	$scope.graniteStuff = {};
+	// $scope.graniteStuff = {};
 	$scope.myMethod = function(newPageNumber, oldPageNumber) {
 		$(".reset").click(function() {
 			$(window).scrollTop(top);
