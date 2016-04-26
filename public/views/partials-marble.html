@@ -1,13 +1,13 @@
 <!-- Material results from category search; ngRepeat -->
     <div class="container">
-       <div class="col m12 center" ng-controller="MarbleCtrl" dir-paginate="material in marbleStuff | itemsPerPage: 1">
-    <a class="btn" ui-sref="material2({id: material.material_category_id})">Browse All Marble</a>
-  </div>
-  <br>
-
-     <div class="row">   
-        <div class="col m3" dir-paginate="material in marbleStuff | itemsPerPage: 20">
-          <a ui-sref="material({name: material.material_name})"><div class="card">
+     <div class="row">
+      <div class="center">
+        <h3>Marble</h3>
+        <p>Marble is one of our most popular stones for bathroom vanities and other low traffic areas, like wash stations, butler's pantry and baking areas.</p>
+      </div> 
+      <br>   
+        <div class="col m3" dir-paginate="material in marbleStuff | itemsPerPage: 28">
+          <a ui-sref="material2({name: material.material_name})"><div class="card">
             <div class="card-image small">
                 <img ng-src="http://marble.com/uploads/materials/{{material.material_id}}/300X300/thumbnail/{{material.material_photo_name}}">
             </div>
@@ -20,7 +20,7 @@
         </div>        
       </div>
     </div>
-    <dir-pagination-controls id="pagination" on-page-change="myMethod(newPageNumber, oldPageNumber)" template-url="\node_modules\angular-utils-pagination\dirPagination.tpl.html"></dir-pagination-controls>
+    <dir-pagination-controls id="pagination" max-size="7" on-page-change="myMethod(newPageNumber, oldPageNumber)" template-url="\node_modules\angular-utils-pagination\dirPagination.tpl.html"></dir-pagination-controls>
 
 
     <div ui-view></div>

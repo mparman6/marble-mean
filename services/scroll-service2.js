@@ -4,7 +4,7 @@ angular.module("marbleApp")
 	return {
 		getSearchResults: function(name) {
 			var deferred = $q.defer(),
-			httpPromise = $http.get('/search/' +name);
+			httpPromise = $http.get('/all/' +name);
 
 		httpPromise.success(function(results) {
 			deferred.resolve(results);

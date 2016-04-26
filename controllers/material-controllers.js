@@ -48,9 +48,9 @@ var marbleApp = angular.module("marbleApp")
 	});	
 })
 
-.controller('SearchCtrl', function($scope, $rootScope, searchFactory) {
+.controller('SearchCtrl', function($scope, $stateParams, searchFactory) {
 	$scope.searchResults = {};
-	$scope.name = $rootScope.materialStuff;
+	$scope.name = $stateParams.name;
 	searchFactory.getSearchResults($scope.name)
 	.then(function(results) {
 		$scope.searchResults = results;
@@ -267,4 +267,4 @@ var marbleApp = angular.module("marbleApp")
 	}, function(error) {
 		console.log(error);
 	});	
-})
+});
