@@ -1,5 +1,10 @@
 <!-- Material results from category search; ngRepeat -->
     <div class="container">
+       <div class="col m12 center" ng-controller="QuartziteCtrl" dir-paginate="material in quartziteStuff | itemsPerPage: 1">
+    <a class="btn" ui-sref="material2({id: material.material_category_id})">Browse All Quartzite</a>
+  </div>
+  <br>
+
      <div class="row">   
         <div class="col m3" dir-paginate="material in quartziteStuff | itemsPerPage: 20">
           <a ui-sref="material({name: material.material_name})"><div class="card">

@@ -11,14 +11,16 @@ app.listen(PORT, function() {
 });
 
 
-var mongoose = require('mongoose');
+var mongoose = require('mongoose'),
+    Schema = mongoose.Schema;
+
 // mongoose.connect('mongodb://mattp:password@ds061355.mlab.com:61355/gmtestdb');
-mongoose.connect('mongodb://localhost/test');
+var connection = mongoose.connect('mongodb://localhost/test');
+
 
 // schema for database
-var Schema = mongoose.Schema;
 
-var materialSchema = Schema({
+var materialSchema = new Schema({
 	id: {
 		type: Number
 	},
@@ -51,7 +53,8 @@ var materialSchema = Schema({
     thumb: Number
 });
 
-var Materials = mongoose.model('Materials', materialSchema);
+
+var Materials = connection.model('Materials', materialSchema);
 
 
 // setting up array for bulk insert
@@ -30185,7 +30188,7 @@ Materials.collection.insert(allMaterials, insertAll);
 
 function insertAll(err, docs) {
 	if (err) {
-		console.log(err);
+		console.log("Error...", err);
 	} else {
 		console.log('All materials were stored in DB');
 	}

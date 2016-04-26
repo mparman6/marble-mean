@@ -1,13 +1,13 @@
 angular.module("marbleApp")
 
-.factory('backFactory', function($q, $http, $stateParams) {
+.factory('scrollFactory', function($q, $http, $stateParams) {
 	return {
-		getBackStuff: function(id) {
+		getScrollStuff: function(id) {
 			var deferred = $q.defer(),
-			httpPromise = $http.get('/back/' +id);
+			httpPromise = $http.get('/material/' + id);
 
-		httpPromise.success(function(id) {
-			deferred.resolve(id);
+		httpPromise.success(function(scrolls) {
+			deferred.resolve(scrolls);
 		})
 		.error(function(error) {
 			console.log('Error...', error);

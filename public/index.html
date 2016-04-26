@@ -37,11 +37,11 @@
       </div>
 
 <!-- Main search bar -->
-      <nav style="background-color: #d56324!important">
+      <nav style="background-color: #d56324!important" ng-controller="SearchCtrl">
         <div class="nav-wrapper">
-          <form action="{{ search }}" method="GET">
+          <form action="{{ name }}" method="GET">
             <div class="input-field">
-              <input id="search" type="search" required placeholder="Search" ng-model="search">
+              <input id="search" type="search" required placeholder="Search" ng-model="name">
               <label for="search"><i class="material-icons">search</i></label>
               <i class="material-icons">close</i>
             </div>
@@ -64,6 +64,7 @@
     <script src="/public/js/app.js"></script>
     <script src="/controllers/material-controllers.js"></script>
     <script src="/services/categories-service.js"></script>
+    <script src="/services/search-service.js"></script>
     <script src="/services/photos-service.js"></script>
     <script src="/services/granite-service.js"></script>
     <script src="/services/marble-service.js"></script>
@@ -78,6 +79,7 @@
     <script src="/services/glass-service.js"></script>
     <script src="/services/materials-service.js"></script>
     <script src="/services/scroll-service.js"></script>
+    <script src="/services/scroll-service2.js"></script>
     <script src="./app/models/modelMaterials.js"></script>
     <script src="/server.js"></script>    
     

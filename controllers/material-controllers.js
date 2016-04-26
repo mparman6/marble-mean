@@ -11,25 +11,48 @@ var marbleApp = angular.module("marbleApp")
 	});
 })
 
-.controller('MatInfoCtrl', function($scope, materialFactory, $stateParams) {
+.controller('MatInfoCtrl', function($scope, $rootScope, materialFactory, $stateParams) {
 	$scope.materialStuff = {};
 	$scope.name = $stateParams.name;
 	materialFactory.getMaterialStuff($scope.name)
 	.then(function(material) {
-		$scope.materialStuff = material;
+		$rootScope.materialStuff = material;
 		console.log(material);
 	}, function(error) {
 		console.log(error);
 	});	
 })
 
-.controller('ScrollCtrl', function($scope, scrollFactory, $stateParams) {
-	$scope.scrollStuff = {};
-	$scope.category = $stateParams.category;
-	scrollFactory.getScrollStuff($scope.category)
+.controller('ScrollCtrl', function($scope, $rootScope, scrollFactory, $stateParams) {
+	// $scope.scrollStuff = {};
+	$scope.id = $stateParams.id;
+	$scope.offset = $stateParams.offset;
+	scrollFactory.getScrollStuff($scope.id)
 	.then(function(scrolls) {
+		// loop for pointer
+		
+		var matArray = scrolls;
+		var offset = parseInt($scope.offset, 10);
+		console.log($scope.id);
+		for(var i = 0; i < matArray.length; i++) {
+			var pointer = (i + offset) % matArray.length;
+			console.log(matArray[pointer]);
+		}
+
 		$scope.scrollStuff = scrolls;
-		console.log(scrolls);
+		// console.log(scrolls);
+	}, function(error) {
+		console.log(error);
+	});	
+})
+
+.controller('SearchCtrl', function($scope, $rootScope, searchFactory) {
+	$scope.searchResults = {};
+	$scope.name = $rootScope.materialStuff;
+	searchFactory.getSearchResults($scope.name)
+	.then(function(results) {
+		$scope.searchResults = results;
+		// console.log(results);
 	}, function(error) {
 		console.log(error);
 	});	
@@ -40,13 +63,13 @@ var marbleApp = angular.module("marbleApp")
 	mongoFactory.getMongoStuff()
 	.then(function(categories) {
 		$scope.mongoStuff = categories;
-		console.log(categories);
+		// console.log(categories);
 	}, function(error) {
 		console.log(error);
 	});
 })
 
-.controller('GraniteCtrl', function($scope, graniteFactory) {
+.controller('GraniteCtrl', function($scope, $rootScope, graniteFactory) {
 	$scope.graniteStuff = {};
 	$scope.myMethod = function(newPageNumber, oldPageNumber) {
 		$(".reset").click(function() {
@@ -55,7 +78,7 @@ var marbleApp = angular.module("marbleApp")
 	}
 	graniteFactory.getGraniteStuff()
 	.then(function(granite) {
-		$scope.graniteStuff = granite;
+	$scope.graniteStuff = granite;
 		console.log(granite);
 	}, function(error) {
 		console.log(error);
