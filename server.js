@@ -40,21 +40,21 @@ app.get('/materialscroll/:category', (req, res) => {
 });
 
 app.get('/category/:name', (req, res) => {
-	db.collection('otherPhotos').find({"material_name": req.params.name}).toArray(function(err, results) {
+	db.collection('moreInfoPhotos').find({"material_name": req.params.name}).toArray(function(err, results) {
 		console.log(req.params.name);
 		res.json(results);
 	});
 });
 
 app.get('/material/:id', (req, res) => {
-	db.collection('otherPhotos').find({"material_category_id": req.params.id}).toArray(function(err, results) {
+	db.collection('moreInfoPhotos').find({"material_category_id": req.params.id}).toArray(function(err, results) {
 		console.log(req.params.id);
 		res.json(results);
 	});
 });
 
 app.get('/all/:id', (req, res) => {
-	db.collection('otherPhotos').find({"material_category_id": req.params.id}).toArray(function(err, results) {
+	db.collection('moreInfoPhotos').find({"material_category_id": req.params.id}).toArray(function(err, results) {
 		console.log(req.params.id);
 		res.json(results);
 	});
