@@ -85,6 +85,8 @@ var marbleApp = angular.module("marbleApp")
 	}, function(error) {
 		console.log(error);
 	});
+	$scope.test = ($scope.$index + 1) + ($scope.currentPage - 1) * $scope.pageSize;
+	console.log($scope.index, $scope.currentPage, $scope.pageSize);
 })
 
 
