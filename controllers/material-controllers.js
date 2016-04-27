@@ -24,7 +24,7 @@ var marbleApp = angular.module("marbleApp")
 })
 
 .controller('ScrollCtrl', function($scope, $rootScope, scrollFactory, $stateParams) {
-	$scope.scrollStuff = {};
+	// $scope.scrollStuff = {};
 	$scope.id = $stateParams.id;
 	$scope.offset = $stateParams.offset;
 	scrollFactory.getScrollStuff($scope.id)
@@ -34,6 +34,11 @@ var marbleApp = angular.module("marbleApp")
 		var newArray = [];
 		var matArray = scrolls;
 		var offset = parseInt($scope.offset, 10);
+		if (offset > 91) {
+			offset = parseInt($scope.offset - 1, 10);
+		} else {
+			offset = parseInt($scope.offset, 10);
+		}
 		// console.log(offset);
 		for(var i = 0; i < matArray.length; i++) {
 			var pointer = (i + offset) % matArray.length;
@@ -42,7 +47,7 @@ var marbleApp = angular.module("marbleApp")
 		}
 
 		$scope.scrollStuff = newArray;
-		// console.log(scrolls);
+		console.log(newArray);
 	}, function(error) {
 		console.log(error);
 	});	
@@ -108,7 +113,7 @@ var marbleApp = angular.module("marbleApp")
 
 
 .controller('QuartziteCtrl', function($scope, quartziteFactory) {
-	$scope.quartziteStuff = {};
+	// $scope.quartziteStuff = {};
 	$scope.myMethod = function(newPageNumber, oldPageNumber) {
 		$(".reset").click(function() {
 			$(window).scrollTop(top);
