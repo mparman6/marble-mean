@@ -20,21 +20,10 @@ app.get('/home', (req, res) => {
 	res.sendFile(process.cwd() + "/public/index.html");
 });
 
-// app.get('/:category/:material', function(req, res) {
-// 	res.sendFile(process.cwd() + "/public/views/partials-granite-matInfo.html");
-// });
-
 // routes
 
 app.get('/categories', (req, res) => {
 	db.collection('categories').find({}).toArray(function(err, results) {
-		res.json(results);
-	});
-});
-
-app.get('/materialscroll/:category', (req, res) => {
-	db.collection('materials').find({"material_category_id": req.params.category}).toArray(function(err, results) {
-		// console.log(req.params.category);
 		res.json(results);
 	});
 });
@@ -55,13 +44,6 @@ app.get('/material/:id', (req, res) => {
 
 app.get('/all/:name', (req, res) => {
 	db.collection('moreInfoPhotos').find({"material_name": req.params.name}).toArray(function(err, results) {
-		console.log(req.params.name);
-		res.json(results);
-	});
-});
-
-app.get('/search/:name', (req, res) => {
-	db.collection('materials').find({"$text":{"$search": req.params.name}}).toArray(function(err, results) {
 		console.log(req.params.name);
 		res.json(results);
 	});
