@@ -27,27 +27,10 @@ var marbleApp = angular.module("marbleApp")
 	// $scope.scrollStuff = {};
 	$scope.id = $stateParams.id;
 	$scope.offset = $stateParams.offset;
-	scrollFactory.getScrollStuff($scope.id)
+	scrollFactory.getScrollStuff($scope.id, $scope.offset)
 	.then(function(scrolls) {
-		// loop for pointer
-
-		var newArray = [];
-		var matArray = scrolls;
-		var offset = parseInt($scope.offset, 10);
-		if (offset > 91) {
-			offset = parseInt($scope.offset - 1, 10);
-		} else {
-			offset = parseInt($scope.offset, 10);
-		}
-		// console.log(offset);
-		for(var i = 0; i < matArray.length; i++) {
-			var pointer = (i + offset) % matArray.length;
-			newArray.push(matArray[pointer]);
-			// console.log(newArray);
-		}
-
-		$scope.scrollStuff = newArray;
-		console.log(newArray);
+		$scope.scrollStuff = scrolls;
+		console.log(scrolls);
 	}, function(error) {
 		console.log(error);
 	});	

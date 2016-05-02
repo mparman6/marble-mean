@@ -4,3 +4,9 @@
 
 // ** How to store array index and be able to access it later in different views
 
+// use ngHide and ngShow for pagination...
+// in granite view
+	// if ($index < 28) { ngShow 0-27} 
+	// elseif ($index > 28 || $index < 55?) { ngShow 28-55}
+	// ....
+	// else {}
