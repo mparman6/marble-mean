@@ -47,6 +47,20 @@ var marbleApp = angular.module("marbleApp")
 		}
 
 		$scope.scrollStuff = newArray;
+		previousCounter = 0;
+		$scope.previous = newArray[previousCounter + 517].material_name;
+		var nextCounter = 1;
+		$scope.next = newArray[offset - offset + nextCounter].material_name;
+		$scope.prevMaterial = function() {
+			previousCounter--;
+			console.log(previousCounter);
+			$scope.previous = newArray[previousCounter + 517].material_name;
+		}
+		$scope.nextMaterial = function() {
+			nextCounter++;
+			console.log(nextCounter);
+			$scope.next = newArray[offset - offset + nextCounter].material_name;
+		}
 	}, function(error) {
 		console.log(error);
 	});	

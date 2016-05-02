@@ -38,7 +38,6 @@ app.get('/category/:name', (req, res) => {
 app.get('/material/:id', (req, res) => {
 	db.collection('moreInfoPhotos').find({"material_category_id": req.params.id}).toArray(function(err, results) {
 		console.log(req.params.id);
-		console.log(req.params.offset);
 		res.json(results);
 	});
 });

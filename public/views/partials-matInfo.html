@@ -3,13 +3,12 @@
     <div class="row">
       <div class="col m12" dir-paginate="material in scrollStuff | itemsPerPage: 1" dir-pagination-controls on-page-change="myMethod(newPageNumber, oldPageNumber)" template-url="\node_modules\angular-utils-pagination\dirPagination.tpl2.html">           
       </div>
-                <div>
+          <div>
             <!-- show previous page material_name -->
-            <p id="backMat">{{ scrollStuff[0 + 517].material_name }}</p>
+            <a ng-click="prevMaterial()"><p id="backMat">{{ previous }}</p></a>
             <!-- show next page material_name -->
-            <p id="nextMat">{{ scrollStuff[offset - offset + 1].material_name }}</p>
+            <a ng-click="nextMaterial()"><p id="nextMat">{{ next }}</p></a>
           </div> 
-          <br>
     </div>
 
 

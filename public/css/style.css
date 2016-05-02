@@ -33,7 +33,7 @@
 	float: left;
 	background-color: #666666;
 	color: #fff;
-	margin-right: 100px;
+	margin-left: 200px;
 
 }
 
@@ -41,7 +41,7 @@
 	float: right;
 	background-color: #666666;
 	color: #fff;
-	margin-left: 100px;
+	margin-right: 200px;
 }
 
 .center {
@@ -50,19 +50,29 @@
 
 h5 {
 	font-size: 1.33rem;
+	font-weight: bold;
 }
 
 #nextMat {
 	float: right;
-	margin-left: 100px;
+	margin-right: 239px;
+	font-size: 18px;
 }
 
 #backMat {
 	float: left;
-	margin-right: 100px;
+	margin-left: 250px;
+	font-size: 18px;
 }
 
 nav {
 	background-color: #666666;
 }
 
+.left {
+	float: left;
+}
+
+.right {
+	float: right;
+}
