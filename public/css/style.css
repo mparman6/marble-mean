@@ -1,6 +1,7 @@
 #gray {
 	background-color: #666666;
 	text-align: center;
+	margin-left: 460px;
 }
 
 .nav-wrapper {
@@ -50,3 +51,18 @@
 h5 {
 	font-size: 1.33rem;
 }
+
+#nextMat {
+	float: right;
+	margin-left: 100px;
+}
+
+#backMat {
+	float: left;
+	margin-right: 100px;
+}
+
+nav {
+	background-color: #666666;
+}
+
