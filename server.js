@@ -35,8 +35,8 @@ app.get('/category/:name', (req, res) => {
 	});
 });
 
-app.get('/material/:id/:offset', (req, res) => {
-	db.collection('moreInfoPhotos').find({"material_category_id": req.params.id}).skip(parseInt(req.params.offset)).toArray(function(err, results) {
+app.get('/material/:id', (req, res) => {
+	db.collection('moreInfoPhotos').find({"material_category_id": req.params.id}).toArray(function(err, results) {
 		console.log(req.params.id);
 		console.log(req.params.offset);
 		res.json(results);
