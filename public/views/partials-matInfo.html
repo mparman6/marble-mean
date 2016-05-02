@@ -1,19 +1,21 @@
 <div class="container">
 
     <div class="row">
-      <div class="col m12" dir-paginate="material in scrollStuff | itemsPerPage: 1">
-        <dir-pagination-controls on-page-change="myMethod(newPageNumber, oldPageNumber)" template-url="\node_modules\angular-utils-pagination\dirPagination.tpl2.html"></dir-pagination-controls>
-        <div>
-          <p id="backMat">{{ material.material_name - 1 }}</p>
-          <p id="nextMat">{{ material.material_name }}</p>
-        </div>     
+      <div class="col m12" dir-paginate="material in scrollStuff | itemsPerPage: 1" dir-pagination-controls on-page-change="myMethod(newPageNumber, oldPageNumber)" template-url="\node_modules\angular-utils-pagination\dirPagination.tpl2.html">           
       </div>
+                <div>
+            <!-- show previous page material_name -->
+            <p id="backMat">{{ scrollStuff[0 + 517].material_name }}</p>
+            <!-- show next page material_name -->
+            <p id="nextMat">{{ scrollStuff[offset - offset + 1].material_name }}</p>
+          </div> 
+          <br>
     </div>
 
 
-     <div class="row">   
+     <div class="row" dir-paginate="material in scrollStuff | itemsPerPage: 1">   
         <div class="col m12">
-            <div class="card" dir-paginate="material in scrollStuff | itemsPerPage: 1">
+            <div class="card">
               <div class="card-content">
                 <h5 class="card-title activator grey-text text-darken-4">{{ material.material_name }}<i class="material-icons right">more_vert</i></h5>
               </div>

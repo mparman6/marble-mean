@@ -47,7 +47,6 @@ var marbleApp = angular.module("marbleApp")
 		}
 
 		$scope.scrollStuff = newArray;
-		console.log(newArray);
 	}, function(error) {
 		console.log(error);
 	});	
