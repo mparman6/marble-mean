@@ -15,11 +15,13 @@
                 <img class="activator" ng-src="http://marble.com/uploads/materials/{{material.material_id}}/1280X720/{{material.material_photo_name}}">
               </div>
               <div class="card-reveal" id="reveal">
-                <span class="card-title grey-text text-darken-4"><h3>{{ material.material_name }}</h3><i class="material-icons right">close</i></span>
-                <p><strong>Description: </strong>{{ material.material_description }}</p>
-                <p><strong>Other Names: </strong>{{ material.material_other_names }}</p>
-                <p><strong>Country of Origin ID: </strong>{{ material.material_country_of_origin }}</p>
-                <p><strong>Online ID: </strong>{{ material.material_online_id }}</p>
+                <span class="card-title grey-text text-darken-4 center"><h3>{{ material.material_name }}</h3><i class="material-icons right">close</i></span>
+                <h5 class="center">Description: </h5>
+                <p class="center"><strong>{{ material.material_description }}</strong></p>
+                <h5 class="center">Other Names: </h5>
+                <p class="center"><strong>{{ material.material_other_names }}</strong></p>
+                <h5 class="center">Country of Origin ID: </h5>
+                <p class="center"><strong>{{ material.material_country_of_origin }}</strong></p>
               </div>
             </div>
         </div>        
