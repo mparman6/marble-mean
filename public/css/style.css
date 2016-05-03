@@ -78,20 +78,27 @@ nav {
 }
 
 #set {
-	font-size: 1.2rem;
+	font-size: 175%;
 }
 
 #topNav {
-	height: 40px;
+	/*height: 40px;*/
 	padding-bottom: 50px;
 }
 
 #midNav {
-	height: 90px;
+	/*height: 90px;*/
 	background-color: #d56324!important;
 	vertical-align: center;
+	text-align: center;
+	margin-right: 300px;
+	margin-left: 400px;
 }
 
 #logo {
-	font-size: 4rem;
+	font-size: 2rem;
+}
+
+#middle {
+	background-color: #d56324!important;
 }
