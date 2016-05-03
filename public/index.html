@@ -30,24 +30,12 @@
               <li><a href="/soapstone">Soapstone</a></li>
               <li><a href="/limestone">Limestone</a></li>
               <li><a href="/slate">Slate</a></li>
-              <li><a href="/glass">Glass</a></li>
+              <li id="test"><a href="/glass">Glass</a></li>
             </ul>
           </div>
         </nav>
       </div>
 
-<!-- Main search bar -->
-      <!-- <nav style="background-color: #d56324!important" ng-controller="SearchCtrl">
-        <div class="nav-wrapper">
-          <form action="{{ name }}" method="GET">
-            <div class="input-field">
-              <input id="search" type="search" required placeholder="Search" ng-model="name">
-              <label for="search"><i class="material-icons">search</i></label>
-              <i class="material-icons">close</i>
-            </div>
-          </form>
-        </div>
-      </nav> -->
       <br>
 
     <div ui-view></div>
@@ -62,6 +50,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.18/angular-ui-router.js"></script>
     <script src="./node_modules/angular-utils-pagination/dirPagination.js"></script>
     <script src="/public/js/app.js"></script>
+    <script src="/public/js/scroll.js"></script>
     <script src="/controllers/material-controllers.js"></script>
     <script src="/services/categories-service.js"></script>
     <script src="./app/models/modelMaterials.js"></script>

@@ -14,7 +14,7 @@ app.listen(PORT, function() {
 var mongoose = require('mongoose'),
     Schema = mongoose.Schema;
 
-// mongoose.connect('mongodb://mattp:password@ds061355.mlab.com:61355/gmtestdb');
+// var connection = mongoose.connect('mongodb://mattp:password@ds061355.mlab.com:61355/gmtestdb');
 var connection = mongoose.connect('mongodb://localhost/test');
 
 
