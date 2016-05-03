@@ -76,3 +76,22 @@ nav {
 .right {
 	float: right;
 }
+
+#set {
+	font-size: 1.2rem;
+}
+
+#topNav {
+	height: 40px;
+	padding-bottom: 50px;
+}
+
+#midNav {
+	height: 90px;
+	background-color: #d56324!important;
+	vertical-align: center;
+}
+
+#logo {
+	font-size: 4rem;
+}
