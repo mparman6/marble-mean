@@ -51,12 +51,10 @@ var marbleApp = angular.module("marbleApp")
 		$scope.previous = newArray[previousCounter + 517].material_name;
 		var nextCounter = 1;
 		$scope.next = newArray[offset - offset + nextCounter].material_name;
-		// $scope.prevMaterial = function() {
+		// $rootScope.nextMaterial = function() {
+		// 	$scope.next = newArray[offset - offset + nextCounter].material_name;
+		// 	previousCounter++;
 		// 	$scope.previous = newArray[previousCounter + 517].material_name;
-		// 	previousCounter--;
-		// 	console.log(previousCounter);
-		// 	nextCounter--;
-		// 	$scope.next = newArray[offset - offset - nextCounter].material_name;
 		// }
 	}, function(error) {
 		console.log(error);

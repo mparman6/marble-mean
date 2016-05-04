@@ -102,3 +102,14 @@ nav {
 #middle {
 	background-color: #d56324!important;
 }
+
+#footer {
+	background-color: #edebd9;
+	color: #000;
+}
+
+.footer-text {
+	color: #000;
+	text-decoration: none;
+	
+}

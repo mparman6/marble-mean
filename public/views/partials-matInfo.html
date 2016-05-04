@@ -1,15 +1,13 @@
 <div class="container">
 
     <div class="row">
-      <div class="col m12" dir-paginate="material in scrollStuff | itemsPerPage: 1">
-          <dir-pagination-controls on-page-change="myMethod(newPageNumber, oldPageNumber)" template-url="\node_modules\angular-utils-pagination\dirPagination.tpl2.html"></dir-pagination-controls>
-        </div>
-          <div>
-            <!-- show previous page material_name -->
+      <div class="col m12" dir-paginate="material in scrollStuff | itemsPerPage: 1" current-page="currentPage">
+          <dir-pagination-controls on-page-change="myMethod(newPageNumber, oldPageNumber)" template-url="\node_modules\angular-utils-pagination\dirPagination.tpl2.html"></dir-pagination-controls><br>
+          <!-- show previous page material_name -->
             <p id="backMat">{{ previous }}</p>
             <!-- show next page material_name -->
             <p id="nextMat">{{ next }}</p>
-          </div> 
+        </div>
     </div>
 
 
