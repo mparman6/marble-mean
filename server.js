@@ -43,6 +43,14 @@ app.get('/material/:id', (req, res) => {
 	});
 });
 
+app.get('/materials/:search', (req, res) => {
+	db.collection('materials').find({"material_name": req.params.search}).toArray(function(err, results) {
+		console.log(req.params.search);
+		console.log(results);
+		res.json(results);
+	});
+});
+
 app.get('/all/:name', (req, res) => {
 	db.collection('moreInfoPhotos').find({"material_name": req.params.name}).toArray(function(err, results) {
 		console.log(req.params.name);

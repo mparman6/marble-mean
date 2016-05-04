@@ -2,10 +2,10 @@
     <div class="container">
        <div class="center">
         <h3>Quartzite</h3>
-        <p>Some stuff about quartzite.</p>
+        <p id="margin">Quartzite is exotic, lush and stunning. It is a fantastic option to mimic the appearance of marble, but with increased durability, which is better suited for busier areas that experience wear and tear.</p>
       </div> 
       <br> 
-  <input type="search" ng-model="q" placeholder="Search Materials..." /><br>
+  <input type="search" ng-model="q" placeholder="Search Quartzite Materials..." /><br>
 
      <div class="row">   
         <div class="col m3" ng-repeat="material in quartziteStuff | filter:q as results">
@@ -15,7 +15,7 @@
             </div>
             <div class="card-content">
               <p>{{ material.material_name }}</p>
-              <p>{{ material.material_country_of_origin }}</p>
+              <p>{{ $index }}</p>
             </div>
             </div>
           </a>

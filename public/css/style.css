@@ -1,7 +1,7 @@
 #gray {
 	background-color: #666666;
 	text-align: center;
-	margin-left: 460px;
+	margin-left: 400px;
 }
 
 .nav-wrapper {
@@ -81,20 +81,6 @@ nav {
 	font-size: 110%;
 }
 
-#topNav {
-	padding-bottom: 50px;
-	background-color: #000;
-}
-
-#midNav {
-	/*height: 90px;*/
-	background-color: #d56324!important;
-	vertical-align: center;
-	text-align: center;
-	margin-right: 300px;
-	margin-left: 400px;
-}
-
 #logo {
 	font-size: 2rem;
 }
@@ -111,5 +97,10 @@ nav {
 .footer-text {
 	color: #000;
 	text-decoration: none;
-	
+
+}
+
+#margin {
+	margin-left: 200px;
+	margin-right: 200px;
 }

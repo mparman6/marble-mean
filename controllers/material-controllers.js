@@ -61,16 +61,26 @@ var marbleApp = angular.module("marbleApp")
 	});	
 })
 
-.controller('SearchCtrl', function($scope, $stateParams, searchFactory) {
-	$scope.searchResults = {};
-	$scope.name = $stateParams.name;
-	searchFactory.getSearchResults($scope.name)
-	.then(function(results) {
-		$scope.searchResults = results;
-		// console.log(results);
-	}, function(error) {
-		console.log(error);
-	});	
+.controller('SearchCtrl', function($rootScope, $scope, searchFactory, $stateParams, $location) {
+	$scope.search = $stateParams.search;
+	$scope.searchFunction = function() {
+		searchFactory.getSearchResults($scope.search)
+		.then(function(results) {
+			$rootScope.searchStuff = results;
+			// console.log($scope.searchStuff);
+		}, function(error) {
+			console.log(error);
+		});
+		$scope.search = "";
+		var url = '/search';
+		$location.path(url);
+	}
+
+	$scope.showSearch = function() {
+		$('#form').toggleClass('ng-hide');
+	}
+	$rootScope.searchStuff = $scope.searchStuff;
+	console.log($scope.searchStuff);
 })
 
 .controller('MainCtrl', function($scope, mongoFactory) {

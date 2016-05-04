@@ -119,6 +119,23 @@ angular.module("marbleApp")
 	};
 })
 
+.factory('searchFactory', function($q, $http, $stateParams) {
+	return {
+		getSearchResults: function(search) {
+			var deferred = $q.defer(),
+			httpPromise = $http.get('/materials/' +search);
+
+		httpPromise.success(function(results) {
+			deferred.resolve(results);
+		})
+		.error(function(error) {
+			console.log('Error...', error);
+		});
+		return deferred.promise;
+		}
+	};
+})
+
 .factory('onyxFactory', function($q, $http) {
 	return {
 		getOnyxStuff: function() {

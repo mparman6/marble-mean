@@ -1,0 +1,20 @@
+<div class="container">
+     <div class="row">   
+        <div class="col m12" ng-repeat="material in searchStuff">
+          <a ui-sref="material({id: material.material_category_id, offset: $index})"><div class="card">
+            <div class="card-image small">
+                <img ng-src="http://marble.com/uploads/materials/{{material.material_id}}/300X300/thumbnail/{{material.material_photo_name}}">
+            </div>
+            <div class="card-content">
+              <p>{{ material.material_name }}</p>
+              <p>{{ material.material_description }}</p>
+            </div>
+            </div>
+          </a>
+        </div>        
+      </div>
+    </div>
+    <!-- <dir-pagination-controls id="pagination" on-page-change="myMethod(newPageNumber, oldPageNumber)" template-url="\node_modules\angular-utils-pagination\dirPagination.tpl.html"></dir-pagination-controls> -->
+
+
+    <div ui-view></div>

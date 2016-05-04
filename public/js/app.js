@@ -14,6 +14,11 @@ marbleApp.config(function($stateProvider, $urlRouterProvider, $locationProvider)
     templateUrl: 'public/views/home.html',
     controller: 'MainCtrl'
   })
+  .state('search', {
+    url: '/search',
+    templateUrl: '/public/views/partials-searchResults.html',
+    controller: 'SearchCtrl'
+  })
   .state('material', {
     url: '/material/:id/:offset',
     templateUrl: '/public/views/partials-matInfo.html',
@@ -22,12 +27,12 @@ marbleApp.config(function($stateProvider, $urlRouterProvider, $locationProvider)
   .state('material2', {
     url: '/all/:name/:offset',
     templateUrl: '/public/views/partials-matInfo2.html',
-    controller: 'SearchCtrl'
+    
   })
    .state('material3', {
     url: '/all/:name',
     templateUrl: '/public/views/partials-matInfo3.html',
-    controller: 'SearchCtrl'
+    
   })
   .state('granite', {
     url: '/granite',
