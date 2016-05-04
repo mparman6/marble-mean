@@ -1,28 +1,7 @@
 var marbleApp = angular.module("marbleApp")
 
-.controller('ImageCtrl', function($scope, imageFactory) {
-	$scope.allPhotos = {};
-	$scope.test = "test successful";
-	imageFactory.getAllPhotos()
-	.then(function(images) {
-		$scope.allPhotos = images;
-	}, function(error) {
-		console.log(error);
-	});
-})
 
-.controller('MatInfoCtrl', function($scope, $rootScope, materialFactory, $stateParams) {
-	$scope.materialStuff = {};
-	$scope.name = $stateParams.name;
-	materialFactory.getMaterialStuff($scope.name)
-	.then(function(material) {
-		$rootScope.materialStuff = material;
-		console.log(material);
-	}, function(error) {
-		console.log(error);
-	});	
-})
-
+// CONTROLLER FOR MATINFO VIEW
 .controller('ScrollCtrl', function($scope, $rootScope, scrollFactory, $stateParams) {
 	// $scope.scrollStuff = {};
 	$scope.id = $stateParams.id;
@@ -58,9 +37,11 @@ var marbleApp = angular.module("marbleApp")
 		// }
 	}, function(error) {
 		console.log(error);
-	});	
+	});
 })
 
+
+// CONTROLLER FOR SEARCH FEATURE AND VIEW
 .controller('SearchCtrl', function($rootScope, $scope, searchFactory, $stateParams, $location) {
 	$scope.search = $stateParams.search;
 	$scope.searchFunction = function() {
@@ -83,6 +64,8 @@ var marbleApp = angular.module("marbleApp")
 	console.log($scope.searchStuff);
 })
 
+
+// CONTROLLER FOR MAIN CATEGORIES VIEW
 .controller('MainCtrl', function($scope, mongoFactory) {
 	$scope.mongoStuff = {};
 	mongoFactory.getMongoStuff()
@@ -94,6 +77,8 @@ var marbleApp = angular.module("marbleApp")
 	});
 })
 
+
+// CONTROLLER FOR GRANITE MATERIALS VIEW
 .controller('GraniteCtrl', function($scope, $rootScope, graniteFactory) {
 	// $scope.graniteStuff = {};
 	$scope.myMethod = function(newPageNumber, oldPageNumber) {
@@ -104,6 +89,7 @@ var marbleApp = angular.module("marbleApp")
 	graniteFactory.getGraniteStuff()
 	.then(function(granite) {
 	$scope.graniteStuff = granite;
+	console.log(granite);
 		// console.log(granite);
 	}, function(error) {
 		console.log(error);
@@ -111,6 +97,7 @@ var marbleApp = angular.module("marbleApp")
 })
 
 
+// CONTROLLER FOR MARBLE MATERIALS VIEW
 .controller('MarbleCtrl', function($scope, marbleFactory) {
 	$scope.marbleStuff = {};
 	$scope.myMethod = function(newPageNumber, oldPageNumber) {
@@ -128,6 +115,7 @@ var marbleApp = angular.module("marbleApp")
 })
 
 
+// CONTROLLER FOR QUARTZITE MATERIALS VIEW
 .controller('QuartziteCtrl', function($scope, quartziteFactory) {
 	// $scope.quartziteStuff = {};
 	$scope.myMethod = function(newPageNumber, oldPageNumber) {
@@ -145,6 +133,7 @@ var marbleApp = angular.module("marbleApp")
 })
 
 
+// CONTROLLER FOR QUARTZ MATERIAL VIEW
 .controller('QuartzCtrl', function($scope, quartzFactory) {
 	$scope.quartzStuff = {};
 	$scope.myMethod = function(newPageNumber, oldPageNumber) {
@@ -162,6 +151,7 @@ var marbleApp = angular.module("marbleApp")
 })
 
 
+// CONTROLLER FOR ONYX MATERIAL VIEW
 .controller('OnyxCtrl', function($scope, onyxFactory) {
 	$scope.onyxStuff = {};
 	$scope.myMethod = function(newPageNumber, oldPageNumber) {
@@ -179,6 +169,7 @@ var marbleApp = angular.module("marbleApp")
 })
 
 
+// CONTROLLER FOR TRAVERTINE MATERIAL VIEW
 .controller('TravertineCtrl', function($scope, travertineFactory) {
 	$scope.travertineStuff = {};
 	$scope.myMethod = function(newPageNumber, oldPageNumber) {
@@ -196,6 +187,7 @@ var marbleApp = angular.module("marbleApp")
 })
 
 
+// CONTROLLER FOR GEMSTONE MATERIAL VIEW
 .controller('GemstoneCtrl', function($scope, gemstoneFactory) {
 	$scope.gemstoneStuff = {};
 	$scope.myMethod = function(newPageNumber, oldPageNumber) {
@@ -213,6 +205,7 @@ var marbleApp = angular.module("marbleApp")
 })
 
 
+// CONTROLLER FOR SOAPSTONE MATERIAL VIEW
 .controller('SoapstoneCtrl', function($scope, soapstoneFactory) {
 	$scope.soapstoneStuff = {};
 	$scope.myMethod = function(newPageNumber, oldPageNumber) {
@@ -230,6 +223,7 @@ var marbleApp = angular.module("marbleApp")
 })
 
 
+// CONTROLLER FOR LIMESTONE MATERIAL VIEW
 .controller('LimestoneCtrl', function($scope, limestoneFactory) {
 	$scope.limestoneStuff = {};
 	$scope.myMethod = function(newPageNumber, oldPageNumber) {
@@ -247,6 +241,7 @@ var marbleApp = angular.module("marbleApp")
 })
 
 
+// CONTROLLER FOR SLATE MATERIAL VIEW
 .controller('SlateCtrl', function($scope, slateFactory) {
 	$scope.slateStuff = {};
 	$scope.myMethod = function(newPageNumber, oldPageNumber) {
@@ -264,6 +259,7 @@ var marbleApp = angular.module("marbleApp")
 })
 
 
+// CONTROLLER FOR GLASS MATERIAL VIEW
 .controller('GlassCtrl', function($scope, glassFactory) {
 	$scope.glassStuff = {};
 	$scope.myMethod = function(newPageNumber, oldPageNumber) {
@@ -279,15 +275,3 @@ var marbleApp = angular.module("marbleApp")
 		console.log(error);
 	});
 })
-
-.controller('BackCtrl', function($scope, backFactory, $stateParams) {
-	$scope.backStuff = {};
-	$scope.id = $stateParams.id;
-	backFactory.getBackStuff($scope.id)
-	.then(function(id) {
-		$scope.backStuff = id;
-		console.log(id);
-	}, function(error) {
-		console.log(error);
-	});	
-});

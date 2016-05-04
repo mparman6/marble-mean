@@ -1,4 +1,4 @@
-
+// SETTING UP SERVER AND CONNECTION TO DATABASE
 var express = require('express');
 var bodyParser = require('body-parser');
 var app = express();
@@ -12,6 +12,15 @@ var db = mongoose.connection;
 app.use(bodyParser.urlencoded({extended: true}))
 app.use(express.static(__dirname + '/'));
 
+app.listen(3000, () => {
+	console.log('Running app.js on 3000');
+});
+
+
+
+
+
+// ROUTES
 
 app.get('/', (req, res) => {
 	res.sendFile(process.cwd() + "/public/index.html");
@@ -20,8 +29,6 @@ app.get('/', (req, res) => {
 app.get('/home', (req, res) => {
 	res.sendFile(process.cwd() + "/public/index.html");
 });
-
-// routes
 
 app.get('/categories', (req, res) => {
 	db.collection('categories').find({}).toArray(function(err, results) {
@@ -46,20 +53,6 @@ app.get('/material/:id', (req, res) => {
 app.get('/materials/:search', (req, res) => {
 	db.collection('materials').find({"material_name": req.params.search}).toArray(function(err, results) {
 		console.log(req.params.search);
-		console.log(results);
-		res.json(results);
-	});
-});
-
-app.get('/all/:name', (req, res) => {
-	db.collection('moreInfoPhotos').find({"material_name": req.params.name}).toArray(function(err, results) {
-		console.log(req.params.name);
-		res.json(results);
-	});
-});
-
-app.get('/photos', (req, res) => {
-	db.collection('photos').find({}).toArray(function(err, results) {
 		res.json(results);
 	});
 });
@@ -132,7 +125,3 @@ app.get('/glass', (req, res) => {
 });
 
 
-
-app.listen(3000, () => {
-	console.log('Running app.js on 3000');
-});

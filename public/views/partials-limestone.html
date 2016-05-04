@@ -1,26 +1,24 @@
-<!-- Material results from category search; ngRepeat -->
     <div class="container">
-       <div class="col m12 center" ng-controller="LimestoneCtrl" dir-paginate="material in limestoneStuff | itemsPerPage: 1">
-    <a class="btn" ui-sref="material2({id: material.material_category_id})">Browse All Limestone</a>
-  </div>
-  <br>
-
-     <div class="row">   
-        <div class="col m3" dir-paginate="material in limestoneStuff | itemsPerPage: 20">
-          <a ui-sref="material({name: material.material_name})"><div class="card">
+     <div class="row">
+      <div class="center">
+        <h3>Limestone</h3>
+        <p id="margin">Limestone is known for uniquely having ancient aquatic fossils embedded in it as a result of being formed in clear, warm, shallow marine waters.</p>
+      </div> 
+      <br>
+        <div class="col m3" dir-paginate="material in limestoneStuff | itemsPerPage: pageSize">
+          <a ui-sref="material({id: material.material_category_id, offset: $index})"><div id="testg"class="card">
             <div class="card-image small">
                 <img ng-src="http://marble.com/uploads/materials/{{material.material_id}}/300X300/thumbnail/{{material.material_photo_name}}">
             </div>
-            <div class="card-content">
-              <p>{{ material.material_name }}</p>
-              <p>{{ material.material_country_of_origin }}</p>
+            <div class="card-content" id="color">
+              <h5>{{ material.material_name }}</h5>
+              <p>{{ $index }}</p> 
             </div>
             </div>
           </a>
         </div>        
       </div>
     </div>
-    <dir-pagination-controls id="pagination" on-page-change="myMethod(newPageNumber, oldPageNumber)" template-url="\node_modules\angular-utils-pagination\dirPagination.tpl.html"></dir-pagination-controls>
 
 
     <div ui-view></div>

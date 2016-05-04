@@ -1,5 +1,6 @@
 angular.module("marbleApp")
 
+// SERVICE FOR QUERYING ALL CATEGORIES
 .factory('mongoFactory', function($q, $http) {
 	return {
 		getMongoStuff: function() {
@@ -17,6 +18,8 @@ angular.module("marbleApp")
 	};
 })
 
+
+// SERVICE FOR QUERYING ALL GRANITE MATERIAL
 .factory('graniteFactory', function($q, $http) {
 	return {
 		getGraniteStuff: function() {
@@ -34,6 +37,8 @@ angular.module("marbleApp")
 	};
 })
 
+
+// SERVICE FOR QUERYING ALL MARBLE MATERIAL
 .factory('marbleFactory', function($q, $http) {
 	return {
 		getMarbleStuff: function() {
@@ -51,6 +56,8 @@ angular.module("marbleApp")
 	};
 })
 
+
+// SERVICE FOR QUERYING ALL GEMSTONE MATERIAL
 .factory('gemstoneFactory', function($q, $http) {
 	return {
 		getGemstoneStuff: function() {
@@ -68,6 +75,8 @@ angular.module("marbleApp")
 	};
 })
 
+
+// SERVICE FOR QUERYING ALL GLASS MATERIAL
 .factory('glassFactory', function($q, $http) {
 	return {
 		getGlassStuff: function() {
@@ -85,6 +94,8 @@ angular.module("marbleApp")
 	};
 })
 
+
+// SERVICE FOR QUERYING ALL LIMESTONE MATERIAL
 .factory('limestoneFactory', function($q, $http) {
 	return {
 		getLimestoneStuff: function() {
@@ -102,23 +113,8 @@ angular.module("marbleApp")
 	};
 })
 
-.factory('materialFactory', function($q, $http, $stateParams) {
-	return {
-		getMaterialStuff: function(name) {
-			var deferred = $q.defer(),
-			httpPromise = $http.get('/category/' +name);
 
-		httpPromise.success(function(material) {
-			deferred.resolve(material);
-		})
-		.error(function(error) {
-			console.log('Error...', error);
-		});
-		return deferred.promise;
-		}
-	};
-})
-
+// SERVICE FOR QUERYING SEARCH PARAMS
 .factory('searchFactory', function($q, $http, $stateParams) {
 	return {
 		getSearchResults: function(search) {
@@ -136,6 +132,8 @@ angular.module("marbleApp")
 	};
 })
 
+
+// SERVICE FOR QUERYING ALL ONYX MATERIAL
 .factory('onyxFactory', function($q, $http) {
 	return {
 		getOnyxStuff: function() {
@@ -153,23 +151,8 @@ angular.module("marbleApp")
 	};
 })
 
-.factory('imageFactory', function($q, $http) {
-	return {
-		getAllPhotos: function() {
-			var deferred = $q.defer(),
-			httpPromise = $http.get('/photos');
 
-		httpPromise.success(function(images) {
-			deferred.resolve(images);
-		})
-		.error(function(error) {
-			console.log('Error...');
-		});
-		return deferred.promise;
-		}
-	};
-})
-
+// SERVICE FOR QUERYING ALL QUARTZ MATERIAL
 .factory('quartzFactory', function($q, $http) {
 	return {
 		getQuartzStuff: function() {
@@ -188,6 +171,7 @@ angular.module("marbleApp")
 })
 
 
+// SERVICE FOR QUERYING ALL QUARTZITE MATERIAL
 .factory('quartziteFactory', function($q, $http) {
 	return {
 		getQuartziteStuff: function() {
@@ -205,6 +189,8 @@ angular.module("marbleApp")
 	};
 })
 
+
+// SERVICE FOR QUERYING ALL SPECIFIC CATEGORY MATERIALS BY ID
 .factory('scrollFactory', function($q, $http, $stateParams) {
 	return {
 		getScrollStuff: function(id) {
@@ -222,23 +208,8 @@ angular.module("marbleApp")
 	};
 })
 
-.factory('searchFactory', function($q, $http, $stateParams) {
-	return {
-		getSearchResults: function(name) {
-			var deferred = $q.defer(),
-			httpPromise = $http.get('/all/' +name);
 
-		httpPromise.success(function(results) {
-			deferred.resolve(results);
-		})
-		.error(function(error) {
-			console.log('Error...', error);
-		});
-		return deferred.promise;
-		}
-	};
-})
-
+// SERVICE FOR QUERYING ALL SLATE MATERIAL
 .factory('slateFactory', function($q, $http) {
 	return {
 		getSlateStuff: function() {
@@ -256,6 +227,8 @@ angular.module("marbleApp")
 	};
 })
 
+
+// SERVICE FOR QUERYING ALL SOAPSTONE MATERIAL
 .factory('soapstoneFactory', function($q, $http) {
 	return {
 		getSoapstoneStuff: function() {
@@ -273,6 +246,8 @@ angular.module("marbleApp")
 	};
 })
 
+
+// SERVICE FOR QUERYING ALL TRAVERTINE MATERIAL
 .factory('travertineFactory', function($q, $http) {
 	return {
 		getTravertineStuff: function() {
