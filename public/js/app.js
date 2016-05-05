@@ -27,6 +27,7 @@ marbleApp.config(function($stateProvider, $urlRouterProvider, $locationProvider)
   .state('material2', {
     url: '/all/:name/:offset',
     templateUrl: '/public/views/partials-matInfo2.html',
+    controller: 'Material2Ctrl'
     
   })
    .state('material3', {

@@ -41,6 +41,18 @@ var marbleApp = angular.module("marbleApp")
 })
 
 
+// CONTROLLER FOR MATERIAL2 VIEW
+.controller('Material2Ctrl', function($scope, $rootScope, materialInfoFactory, $stateParams) {
+	$scope.name = $stateParams.name;
+	materialInfoFactory.getSearchResults($scope.name)
+	.then(function(results) {
+		$scope.searchResults = results;
+	}, function(error) {
+		console.log(error);
+	});
+})
+
+
 // CONTROLLER FOR SEARCH FEATURE AND VIEW
 .controller('SearchCtrl', function($rootScope, $scope, searchFactory, $stateParams, $location) {
 	$scope.search = $stateParams.search;

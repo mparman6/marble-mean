@@ -133,6 +133,25 @@ angular.module("marbleApp")
 })
 
 
+// SERVICE FOR QUERYING NAME PARAMS
+.factory('materialInfoFactory', function($q, $http, $stateParams) {
+	return {
+		getSearchResults: function(name) {
+			var deferred = $q.defer(),
+			httpPromise = $http.get('/all/' +name);
+
+		httpPromise.success(function(results) {
+			deferred.resolve(results);
+		})
+		.error(function(error) {
+			console.log('Error...', error);
+		});
+		return deferred.promise;
+		}
+	};
+})
+
+
 // SERVICE FOR QUERYING ALL ONYX MATERIAL
 .factory('onyxFactory', function($q, $http) {
 	return {
